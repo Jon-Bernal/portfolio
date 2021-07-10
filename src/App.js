@@ -6,6 +6,8 @@ import { Work } from "./pages/Work";
 import { Skills } from "./pages/Skills";
 import { Contact } from "./pages/Contact";
 
+import { FaRegTrashAlt } from "react-icons/fa";
+
 function App() {
   const [openApp, setOpenApp] = useState("");
 
@@ -13,18 +15,22 @@ function App() {
     <div className="App">
       <div className={styles.iconGroup}>
         <button onClick={() => setOpenApp("about")} className={styles.icon}>
-          About Logo
+          About Icon
         </button>
         <button onClick={() => setOpenApp("work")} className={styles.icon}>
-          Work History Logo
+          Work History Icon
         </button>
         <button onClick={() => setOpenApp("skills")} className={styles.icon}>
-          Skills Logo
+          Skills Icon
         </button>
         <button onClick={() => setOpenApp("contact")} className={styles.icon}>
-          contact Logo
+          contact Icon
         </button>
       </div>
+      <button className={styles.trashIconBtn}>
+        <FaRegTrashAlt className={styles.trashIcon} />
+        Trash
+      </button>
 
       {!!openApp && (
         <div className={styles.appWindow}>
