@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { About } from "./pages/About";
+import { About } from "./pages/About/About";
 
+import "./index.css";
 import styles from "./App.module.css";
 import { Work } from "./pages/Work";
-// import { Skills } from "./pages/Skills";
 import { Contact } from "./pages/Contact";
 
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -14,54 +14,55 @@ function App() {
   const [openApp, setOpenApp] = useState("");
 
   return (
-    <div className={`App ${styles.App}`}>
-      <div className={styles.iconGroup}>
-        <button
-          onClick={() => setOpenApp("about")}
-          className={`${styles.icon} ${styles.trashIconBtn}`}
-        >
-          <IoPersonCircleOutline className={`${styles.trashIcon}`} />
-          About Me
-        </button>
-        <button
-          onClick={() => setOpenApp("work")}
-          className={`${styles.icon} ${styles.trashIconBtn}`}
-        >
-          <RiHistoryFill className={styles.trashIcon} />
-          Work History Icon
-        </button>
-        {/* <button
-          onClick={() => setOpenApp("skills")}
-          className={`${styles.icon} ${styles.trashIconBtn}`}
-        >
-          <IoPersonCircleOutline className={styles.trashIcon} />
-          Skills Icon
-        </button> */}
-        <button
-          onClick={() => setOpenApp("contact")}
-          className={`${styles.icon} ${styles.trashIconBtn}`}
-        >
-          <RiMailSendLine className={styles.trashIcon} />
-          contact Icon
-        </button>
-      </div>
-      <button className={styles.trashIconBtn}>
-        <FaRegTrashAlt className={styles.trashIcon} />
-        Trash
-      </button>
+    <>
+      <div className={`App ${styles.container}`}>
+        <div className={styles.screen}>
+          <div className={styles.overlay}>Input-1</div>
 
-      {!!openApp && (
-        <div className={styles.appWindow}>
-          <button className={styles.closeBtn} onClick={() => setOpenApp("")}>
-            X
+          <div className={styles.iconGroup}>
+            <button
+              onClick={() => setOpenApp("about")}
+              className={`${styles.iconBtn}`}
+            >
+              <IoPersonCircleOutline className={`${styles.icon}`} />
+              About Me
+            </button>
+            <button
+              onClick={() => setOpenApp("work")}
+              className={styles.iconBtn}
+            >
+              <RiHistoryFill className={styles.icon} />
+              Work History
+            </button>
+            <button
+              onClick={() => setOpenApp("contact")}
+              className={`${styles.iconBtn}`}
+            >
+              <RiMailSendLine className={styles.icon} />
+              Contact Me
+            </button>
+          </div>
+          <button className={`${styles.iconBtn}`}>
+            <FaRegTrashAlt className={styles.icon} />
+            Trash
           </button>
-          {openApp === "about" && <About />}
-          {openApp === "work" && <Work />}
-          {/* {openApp === "skills" && <Skills />} */}
-          {openApp === "contact" && <Contact />}
+
+          {!!openApp && (
+            <div className={styles.appWindow}>
+              <button
+                className={styles.closeBtn}
+                onClick={() => setOpenApp("")}
+              >
+                X
+              </button>
+              {openApp === "about" && <About />}
+              {openApp === "work" && <Work />}
+              {openApp === "contact" && <Contact />}
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 
