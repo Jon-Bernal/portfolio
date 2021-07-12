@@ -3,27 +3,45 @@ import { About } from "./pages/About";
 
 import styles from "./App.module.css";
 import { Work } from "./pages/Work";
-import { Skills } from "./pages/Skills";
+// import { Skills } from "./pages/Skills";
 import { Contact } from "./pages/Contact";
 
 import { FaRegTrashAlt } from "react-icons/fa";
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
 function App() {
   const [openApp, setOpenApp] = useState("");
 
   return (
-    <div className="App">
+    <div className={`App ${styles.App}`}>
       <div className={styles.iconGroup}>
-        <button onClick={() => setOpenApp("about")} className={styles.icon}>
-          About Icon
+        <button
+          onClick={() => setOpenApp("about")}
+          className={`${styles.icon} ${styles.trashIconBtn}`}
+        >
+          <IoPersonCircleOutline className={`${styles.trashIcon}`} />
+          About Me
         </button>
-        <button onClick={() => setOpenApp("work")} className={styles.icon}>
+        <button
+          onClick={() => setOpenApp("work")}
+          className={`${styles.icon} ${styles.trashIconBtn}`}
+        >
+          <RiHistoryFill className={styles.trashIcon} />
           Work History Icon
         </button>
-        <button onClick={() => setOpenApp("skills")} className={styles.icon}>
+        {/* <button
+          onClick={() => setOpenApp("skills")}
+          className={`${styles.icon} ${styles.trashIconBtn}`}
+        >
+          <IoPersonCircleOutline className={styles.trashIcon} />
           Skills Icon
-        </button>
-        <button onClick={() => setOpenApp("contact")} className={styles.icon}>
+        </button> */}
+        <button
+          onClick={() => setOpenApp("contact")}
+          className={`${styles.icon} ${styles.trashIconBtn}`}
+        >
+          <RiMailSendLine className={styles.trashIcon} />
           contact Icon
         </button>
       </div>
@@ -39,7 +57,7 @@ function App() {
           </button>
           {openApp === "about" && <About />}
           {openApp === "work" && <Work />}
-          {openApp === "skills" && <Skills />}
+          {/* {openApp === "skills" && <Skills />} */}
           {openApp === "contact" && <Contact />}
         </div>
       )}

@@ -1,10 +1,57 @@
+::root {
+  --screen-background: #121010;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
-.App {
+.root {
   margin: 0;
   padding: 0;
   min-height: 100vh;
   min-width: 100vw;
+  /* background: black; */
+}
+
+.App {
+  background: var(--screen-background);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+  border: 1px solid red;
+
+  /* Scanline stuff */
+  animation: turn-on 4s linear;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+/* Scanline stuff */
+.App::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* bottom: 0;
+  right: 0; */
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#12101001, #100e0e01),
+    /* linear-gradient(90deg, #ff0000f0, #00ff00fa, #0000fff0); */
+      linear-gradient(90deg, #ff00000f, #00ff000a, #0000ff0f),
+    linear-gradient(0deg, #ff00000f, #00ff000a, #0000ff0f);
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
 
 .iconGroup {
@@ -39,6 +86,7 @@ body,
 
 .trashIcon {
   font-size: 3rem;
+  color: #40baf3;
 }
 
 .appWindow {
@@ -60,4 +108,47 @@ body,
   border: none;
   padding: 3px;
   font-size: 1.5rem;
+}
+
+@keyframes turn-on {
+  0% {
+    transform: scale(1, 0.8) translate3d(0, 0, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 1;
+    overflow: hidden;
+  }
+  3.5% {
+    transform: scale(1, 0.8) translate3d(0, 100%, 0);
+    overflow: hidden;
+  }
+
+  3.6% {
+    transform: scale(1, 0.8) translate3d(0, -100%, 0);
+    opacity: 1;
+    overflow: hidden;
+  }
+
+  9% {
+    transform: scale(1, 0.6) translate3d(0, 100%, 0);
+    -webkit-filter: brightness(30);
+    filter: brightness(30);
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  11% {
+    transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(0) brightness(0);
+    filter: contrast(0) brightness(0);
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  100% {
+    transform: scale(1, 1) translate3d(0, 0, 0);
+    -webkit-filter: contrast(1) brightness(1) saturate(1);
+    filter: contrast(1) brightness(1) saturate(1);
+    opacity: 1;
+  }
 }
