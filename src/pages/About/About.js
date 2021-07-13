@@ -8,7 +8,7 @@ export function About() {
       <img
         src={jonImage}
         className={styles.headshot}
-        alt={"picture of Jon Bernal, web dev extraordinaire"}
+        alt={"Jon Bernal, web dev extraordinaire"}
       />
     </div>
   );
