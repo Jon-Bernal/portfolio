@@ -10,6 +10,7 @@ import node from "../../images/nodejs.png";
 import rest from "../../images/restfulAPI.png";
 import semantic from "../../images/semantic-ui.png";
 import fastify from "../../images/fastify.png";
+import graphql from "../../images/graphql-icon.svg";
 
 export function About() {
   return (
@@ -32,15 +33,52 @@ export function About() {
       <hr />
 
       <h2>Technologies I have experience working with</h2>
-      <img src={html} className={styles.skill} alt={"HTML5"} />
-      <img src={css} className={styles.skill} alt={"CSS3"} />
-      <img src={javascript} className={styles.skill} alt={"JavaScript"} />
-      <img src={express} className={styles.skill} alt={"Express.js"} />
-      <img src={fastify} className={styles.skill} alt={"Fastify"} />
-      <img src={mongodb} className={styles.skill} alt={"MongoDB"} />
-      <img src={node} className={styles.skill} alt={"Node.js"} />
-      <img src={rest} className={styles.skill} alt={"RESTful APIs"} />
-      <img src={semantic} className={styles.skill} alt={"Semantic UI"} />
+      <div className={styles.techSection}>
+        <div className={styles.techItem}>
+          <img src={html} className={styles.techLogo} alt={"HTML5"} />
+          <p>HTML5</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={css} className={styles.techLogo} alt={"CSS3"} />
+          <p>CSS3</p>
+        </div>
+        <div className={styles.techItem}>
+          <img
+            src={javascript}
+            className={styles.techLogo}
+            alt={"JavaScript"}
+          />
+          <p>Javascript</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={express} className={styles.techLogo} alt={"Express.js"} />
+          <p>Express.js</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={fastify} className={styles.techLogo} alt={"Fastify"} />
+          <p>Fastify</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={mongodb} className={styles.techLogo} alt={"MongoDB"} />
+          <p>MongoDB</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={node} className={styles.techLogo} alt={"Node.js"} />
+          <p>Node.js</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={rest} className={styles.techLogo} alt={"RESTful APIs"} />
+          <p>RESTful API</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={semantic} className={styles.techLogo} alt={"Semantic UI"} />
+          <p>Semantic UI</p>
+        </div>
+        <div className={styles.techItem}>
+          <img src={graphql} className={styles.techLogo} alt={"graphql"} />
+          <p>GraphQL</p>
+        </div>
+      </div>
     </div>
   );
 }

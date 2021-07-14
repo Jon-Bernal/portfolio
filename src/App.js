@@ -49,15 +49,20 @@ function App() {
 
           {!!openApp && (
             <div className={styles.appWindow}>
-              <button
-                className={styles.closeBtn}
-                onClick={() => setOpenApp("")}
-              >
-                X
-              </button>
-              {openApp === "about" && <About />}
-              {openApp === "work" && <Work />}
-              {openApp === "contact" && <Contact />}
+              <div className={styles.appHeader}>
+                <h2>{openApp}</h2>
+                <button
+                  className={styles.closeBtn}
+                  onClick={() => setOpenApp("")}
+                >
+                  X
+                </button>
+              </div>
+              <div className={styles.appContent}>
+                {openApp === "about" && <About />}
+                {openApp === "work" && <Work />}
+                {openApp === "contact" && <Contact />}
+              </div>
             </div>
           )}
         </div>

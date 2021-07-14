@@ -229,6 +229,15 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.appHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: red;
+  height: 35px;
+}
+
 .closeBtn {
   position: absolute;
   top: 0;
@@ -238,4 +247,11 @@
   border: none;
   padding: 3px;
   font-size: 1.5rem;
+}
+
+.appContent {
+  height: calc(90vh - 37px);
+  width: 100%;
+
+  overflow: auto;
 }
