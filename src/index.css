@@ -128,7 +128,7 @@ table {
   border-spacing: 0;
 }
 
-::root {
+:root {
   --screen-background: #121010;
 }
 
