@@ -41,11 +41,11 @@ function App() {
               <RiMailSendLine className={styles.icon} />
               Contact Me
             </button>
-          </div>
-          <button className={`${styles.iconBtn}`}>
+            {/* <button className={`${styles.iconBtn}`}>
             <FaRegTrashAlt className={styles.icon} />
             Trash
-          </button>
+          </button> */}
+          </div>
 
           {!!openApp && (
             <div className={styles.appWindow}>

@@ -15,7 +15,6 @@ import graphql from "../../images/graphql-icon.svg";
 export function About() {
   return (
     <div>
-      <h2>About Me</h2>
       <p>I'm a fullstack web developer based in Herndon, Va</p>
 
       <p>
@@ -24,11 +23,11 @@ export function About() {
         rock climbing, hiking, reading, trail running or helping rehabilitate
         rabbits.
       </p>
-      <img
+      {/* <img
         src={jonImage}
         className={styles.headshot}
         alt={"Jon Bernal, web dev extraordinaire"}
-      />
+      /> */}
 
       <hr />
 
