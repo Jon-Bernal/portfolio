@@ -5,6 +5,7 @@ import "./index.css";
 import styles from "./App.module.css";
 import { Work } from "./pages/Work";
 import { Contact } from "./pages/Contact";
+import OsMenu from "./OsMenu/OsMenu";
 
 import { FaRegTrashAlt } from "react-icons/fa";
 import { IoPersonCircleOutline } from "react-icons/io5";
@@ -12,12 +13,21 @@ import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
 function App() {
   const [openApp, setOpenApp] = useState("");
+  const [theme, setTheme] = useState("dark");
 
   return (
     <>
-      <div className={`App ${styles.container}`}>
+      {/* ================== crt screen section ================== */}
+      <div className={`App ${styles.container}`} data-theme={theme}>
         <div className={styles.screen}>
+          {/* ================== Green Input Overlay ================== */}
+          <OsMenu theme={theme} setTheme={setTheme} />
+
+          {/* ================== Green Input Overlay ================== */}
+
           <div className={styles.overlay}>Input-1</div>
+
+          {/* ================== Icons section ================== */}
 
           <div className={styles.iconGroup}>
             <button
@@ -47,6 +57,7 @@ function App() {
           </button> */}
           </div>
 
+          {/* ================== App section ================== */}
           {!!openApp && (
             <div className={styles.appWindow}>
               <div className={styles.appHeader}>
@@ -58,10 +69,12 @@ function App() {
                   X
                 </button>
               </div>
-              <div className={styles.appContent}>
-                {openApp === "about" && <About />}
-                {openApp === "work" && <Work />}
-                {openApp === "contact" && <Contact />}
+              <div className={styles.appScroller}>
+                <div className={styles.appContent}>
+                  {openApp === "about" && <About />}
+                  {openApp === "work" && <Work />}
+                  {openApp === "contact" && <Contact />}
+                </div>
               </div>
             </div>
           )}

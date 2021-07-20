@@ -1,0 +1,49 @@
+.container {
+  background: var(--accentText);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--mainColor);
+}
+
+.osMenuBtn {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--mainColor);
+  border: 0px solid black;
+}
+
+.osMenuBtn:hover {
+  background: var(--mainColorDarken);
+}
+
+.osLogo {
+  color: var(--screen);
+  font-size: 2rem;
+}
+
+.menu {
+  position: absolute;
+  bottom: 100%;
+  border: 2px solid var(--mainColor);
+  background: var(--screen);
+}
+.menu[data-open="false"] {
+  display: none;
+}
+
+.menu > button {
+  padding: 10px 30px;
+  color: var(--textColor);
+  border: none;
+  background: var(--screen);
+}
+
+.menu > button:hover {
+  background: var(--mainColorLighten);
+}
