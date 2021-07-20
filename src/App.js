@@ -13,7 +13,7 @@ import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
 function App() {
   const [openApp, setOpenApp] = useState("");
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
 
   return (
     <>
@@ -69,12 +69,10 @@ function App() {
                   X
                 </button>
               </div>
-              <div className={styles.appScroller}>
-                <div className={styles.appContent}>
-                  {openApp === "about" && <About />}
-                  {openApp === "work" && <Work />}
-                  {openApp === "contact" && <Contact />}
-                </div>
+              <div className={styles.appContent}>
+                {openApp === "about" && <About />}
+                {openApp === "work" && <Work />}
+                {openApp === "contact" && <Contact />}
               </div>
             </div>
           )}
