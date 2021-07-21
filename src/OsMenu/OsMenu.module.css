@@ -47,3 +47,20 @@
 .menu > button:hover {
   background: var(--mainColorLighten);
 }
+
+.systemTray {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid red;
+  height: 100%;
+  padding: 2px;
+}
+
+.trayIcon {
+  font-size: 1.8rem;
+  color: var(--screen);
+}

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import styles from "./OsMenu.module.css";
 
-import { AiOutlineWindows } from "react-icons/ai";
+import { AiOutlineWindows, AiFillLinkedin } from "react-icons/ai";
+import { FaGithubSquare } from "react-icons/fa";
 
 const OsMenu = ({ theme, setTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,13 @@ const OsMenu = ({ theme, setTheme }) => {
         <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
           Change Theme
         </button>
+      </div>
+
+      {/* contact me system tray */}
+      <div className={styles.systemTray}>
+        <FaGithubSquare className={styles.trayIcon} />
+        <AiFillLinkedin className={styles.trayIcon} />
+        time
       </div>
     </div>
   );
