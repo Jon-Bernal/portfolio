@@ -7,10 +7,13 @@ import { FaGithubSquare } from "react-icons/fa";
 
 const OsMenu = ({ theme, setTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [clock, setClock] = useState();
 
   useEffect(() => {
     setIsOpen(false);
   }, [theme]);
+
+  useEffect(() => {}, []);
 
   return (
     <div className={styles.container}>
@@ -27,9 +30,20 @@ const OsMenu = ({ theme, setTheme }) => {
 
       {/* contact me system tray */}
       <div className={styles.systemTray}>
-        <FaGithubSquare className={styles.trayIcon} />
-        <AiFillLinkedin className={styles.trayIcon} />
-        time
+        <a
+          href="https://github.com/Jon-Bernal"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FaGithubSquare className={styles.trayIcon} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jon-bernal/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <AiFillLinkedin className={styles.trayIcon} />
+        </a>
       </div>
     </div>
   );
