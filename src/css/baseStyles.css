@@ -1,21 +1,24 @@
 /* ======== variables ======== */
 :root {
   --mainColor: #3087f2;
-  --mainColorLighten: #50a9f4;
-  --mainColorDarken: #1065f0;
+  --accentColor: #3087f2;
+  --background: #3087f2;
   --screen: white;
   --textColor: #323232;
   --accentText: #545454;
 }
 
 /* ======== Themes ======== */
-/* Dark Mode */
+/* MS Light Mode */
 .App[data-theme="light"] {
-  --screen: white;
+  --screen: #008080;
   --textColor: #323232;
-  --mainColor: #3087f2;
+  --mainColor: #c0c0c0;
+  --accentColor: #000080; /* hyperlink blue */
+  --background: #008080; /* weird green background */
   --fontFamily: "MS Sans Serif";
 }
+/* MS Dark Mode */
 .App[data-theme="dark"] {
   --screen: #323232;
   --textColor: #eee;

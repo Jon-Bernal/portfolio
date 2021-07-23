@@ -13,7 +13,7 @@ import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
 function App() {
   const [openApp, setOpenApp] = useState("");
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   return (
     <>

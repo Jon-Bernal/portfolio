@@ -2,23 +2,27 @@ import React, { useState, useEffect } from "react";
 
 import styles from "./OsMenu.module.css";
 
-import { AiOutlineWindows, AiFillLinkedin } from "react-icons/ai";
-import { FaGithubSquare } from "react-icons/fa";
+import { AiOutlineWindows, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { SiWindows95 } from "react-icons/si";
 
 const OsMenu = ({ theme, setTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [clock, setClock] = useState();
+  const [clock, setClock] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    setTimeout(() => {
+      setClock(new Date().toLocaleTimeString());
+    }, 1000);
+  }, [clock]);
 
   useEffect(() => {
     setIsOpen(false);
   }, [theme]);
 
-  useEffect(() => {}, []);
-
   return (
     <div className={styles.container}>
       <button className={styles.osMenuBtn} onClick={() => setIsOpen(!isOpen)}>
-        <AiOutlineWindows className={styles.osLogo} />
+        <SiWindows95 className={styles.osLogo} /> Start
       </button>
 
       {/* Menu */}
@@ -34,16 +38,19 @@ const OsMenu = ({ theme, setTheme }) => {
           href="https://github.com/Jon-Bernal"
           target="_blank"
           rel="noreferrer noopener"
+          className={styles.trayIcon}
         >
-          <FaGithubSquare className={styles.trayIcon} />
+          <AiFillGithub className={styles.trayIcon} />
         </a>
         <a
           href="https://www.linkedin.com/in/jon-bernal/"
           target="_blank"
           rel="noreferrer noopener"
+          className={styles.trayIcon}
         >
           <AiFillLinkedin className={styles.trayIcon} />
         </a>
+        <p className={styles.clock}>{clock}</p>
       </div>
     </div>
   );
