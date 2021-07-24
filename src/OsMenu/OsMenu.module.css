@@ -43,7 +43,7 @@
   position: absolute;
   bottom: 100%;
   border: 2px solid var(--mainColor);
-  background: var(--screen);
+  background: var(--mainColor);
 }
 .menu[data-open="false"] {
   display: none;
@@ -53,7 +53,9 @@
   padding: 10px 30px;
   color: var(--textColor);
   border: none;
-  background: var(--screen);
+  /* background: var(--screen); */
+  font-size: 1.15rem;
+  font-weight: bold;
 }
 
 .systemTray {

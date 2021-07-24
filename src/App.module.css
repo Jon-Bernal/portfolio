@@ -210,13 +210,13 @@
   text-align: center;
   cursor: pointer;
   align-items: center;
-  color: var(--textColor);
+  color: var(--mainColor);
 }
 
 .icon {
   font-size: 3rem;
   /* color: #40baf3; */
-  color: #3087f2;
+  color: var(--mainColor);
   /* margin: 0 auto; */
 }
 

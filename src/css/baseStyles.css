@@ -8,6 +8,8 @@
   --accentText: #545454;
 }
 
+/* Overhaul these to use ms as a prefix for all ms related colors and variables. */
+
 /* ======== Themes ======== */
 /* MS Light Mode */
 .App[data-theme="light"] {
