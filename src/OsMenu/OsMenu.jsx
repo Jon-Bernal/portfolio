@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import styles from "./OsMenu.module.css";
 
-import { AiOutlineWindows, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiWindows95 } from "react-icons/si";
 
 const OsMenu = ({ theme, setTheme }) => {
