@@ -7,7 +7,7 @@ import { Work } from "./pages/Work";
 import { Contact } from "./pages/Contact";
 import OsMenu from "./OsMenu/OsMenu";
 
-import { FaRegTrashAlt } from "react-icons/fa";
+// import { FaRegTrashAlt } from "react-icons/fa";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
