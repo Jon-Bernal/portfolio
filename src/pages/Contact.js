@@ -1,4 +1,4 @@
-import { FaGithubSquare } from "react-icons/fa";
+// import { FaGithubSquare } from "react-icons/fa";
 
 export function Contact() {
   return (
