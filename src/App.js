@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { About } from "./pages/About/About";
 
 import "./index.css";
@@ -13,8 +13,19 @@ import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
 function App() {
   const [openApp, setOpenApp] = useState("");
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("");
 
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      setTheme(localStorage.getItem("theme"));
+    } else {
+      setTheme("light");
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
   return (
     <>
       {/* ================== crt screen section ================== */}
