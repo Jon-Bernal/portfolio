@@ -27,7 +27,7 @@ const OsMenu = ({ theme, setTheme }) => {
 
       {/* Menu */}
       <div className={styles.menu} data-open={`${isOpen}`}>
-        <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
           Change Theme
         </button>
       </div>

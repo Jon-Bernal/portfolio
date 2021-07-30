@@ -12,7 +12,7 @@
 
 /* ======== Themes ======== */
 /* MS Light Mode */
-.App[data-theme="light"] {
+.App[data-theme="ms"] {
   --screen: #008080;
   --textColor: #323232;
   --mainColor: #c0c0c0;
@@ -21,7 +21,7 @@
   --fontFamily: "MS Sans Serif";
 }
 /* MS Dark Mode */
-.App[data-theme="dark"] {
+.App[data-theme="osx"] {
   --screen: #323232;
   --textColor: #eee;
   --mainColor: #3087f2;

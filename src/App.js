@@ -19,7 +19,7 @@ function App() {
     if (localStorage.getItem("theme")) {
       setTheme(localStorage.getItem("theme"));
     } else {
-      setTheme("light");
+      setTheme("ms");
     }
   }, []);
 

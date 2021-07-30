@@ -1,21 +1,63 @@
 // import jonImage from "../../images/Portfolio-headshot-pencil-small.png";
 import styles from "./About.module.css";
 
-import css from "../../images/css3.png";
-import express from "../../images/express-js.png";
-import html from "../../images/html5.png";
-import javascript from "../../images/javascript.png";
-import mongodb from "../../images/mongodb.png";
-import node from "../../images/nodejs.png";
-import rest from "../../images/restfulAPI.png";
-import semantic from "../../images/semantic-ui.png";
-import fastify from "../../images/fastify.png";
-import graphql from "../../images/graphql-icon.svg";
+// import css from "../../images/css3.png";
+// import express from "../../images/express-js.png";
+// import html from "../../images/html5.png";
+// import javascript from "../../images/javascript.png";
+// import mongodb from "../../images/mongodb.png";
+// import node from "../../images/nodejs.png";
+// import rest from "../../images/restfulAPI.png";
+// import semantic from "../../images/semantic-ui.png";
+// import fastify from "../../images/fastify.png";
+// import graphql from "../../images/graphql-icon.svg";
+
+import { FaGrinWink } from "react-icons/fa";
 
 export function About() {
   return (
-    <div>
-      <p>I'm a fullstack web developer based in Herndon, Va</p>
+    <main className={styles.container}>
+      {/* ======================= New Stuff ==================== */}
+      {/* Penciled image of me here */}
+      <p>
+        Hello, My name is Jon Bernal. I'm a soon to be award winning{" "}
+        <FaGrinWink /> Full Stack Web Developer living it up in the PNW. I
+        currently work as a Full Stack Engineer at{" "}
+        <a className={styles.link} href="https://nowigence.com">
+          Nowigence
+        </a>
+        , where I get to solve fun and complex problems every day! See more of
+        the things I have been working on in my{" "}
+        <button onClick={() => {}} className={styles.link}>
+          portfolio
+        </button>
+        , on{" "}
+        <a
+          className={styles.link}
+          href="https://www.linkedin.com/in/jon-bernal/"
+        >
+          LinkedIn
+        </a>{" "}
+        or on{" "}
+        <a className={styles.link} href="https://github.com/Jon-Bernal">
+          Github
+        </a>
+        . Just don't mind the trail of broken and half finished personal
+        projects on Github.
+      </p>
+
+      <p>
+        Outside of work, I have a beautiful wife and three bunnies. I also have
+        a number of side projects I'm currently working on, such as a day
+        trading robot, an allergy application that helps people find products
+        they won't be allergic to and my personal favorite, the one you're
+        currently looking at! I'm currently happily working at Nowigence, but if
+        anyone wants to grab a hard cider (not required) and chat, don't
+        hesitate to drop me a line!
+      </p>
+
+      {/* ======================= Old Stuff ==================== */}
+      {/* <p>I'm a fullstack web developer near Seattle Washington</p>
 
       <p>
         I enjoy solving complex problems and creating intuitive layouts. When
@@ -23,11 +65,11 @@ export function About() {
         rock climbing, hiking, reading, trail running or helping rehabilitate
         rabbits.
       </p>
-      {/* <img
+      <img
         src={jonImage}
         className={styles.headshot}
         alt={"Jon Bernal, web dev extraordinaire"}
-      /> */}
+      />
 
       <hr />
 
@@ -77,7 +119,7 @@ export function About() {
           <img src={graphql} className={styles.techLogo} alt={"graphql"} />
           <p>GraphQL</p>
         </div>
-      </div>
-    </div>
+      </div> */}
+    </main>
   );
 }
