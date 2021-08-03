@@ -21,7 +21,7 @@ export function About() {
       {/* Penciled image of me here */}
       <p>
         Hello, My name is Jon Bernal. I'm a soon to be award winning{" "}
-        <FaGrinWink /> Full Stack Web Developer living it up in the PNW. I
+        <FaGrinWink /> Full Stack Web Developer living just North of Seattle. I
         currently work as a Full Stack Engineer at{" "}
         <a className={styles.link} href="https://nowigence.com">
           Nowigence

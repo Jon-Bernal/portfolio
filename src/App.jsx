@@ -3,7 +3,7 @@ import { About } from "./pages/About/About";
 
 import "./index.css";
 import styles from "./App.module.css";
-import { Work } from "./pages/Work";
+import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { Contact } from "./pages/Contact";
 import OsMenu from "./OsMenu/OsMenu";
 
@@ -49,11 +49,11 @@ function App() {
               About Me
             </button>
             <button
-              onClick={() => setOpenApp("work")}
+              onClick={() => setOpenApp("portfolio")}
               className={styles.iconBtn}
             >
               <RiHistoryFill className={styles.icon} />
-              Work History
+              Portfolio
             </button>
             <button
               onClick={() => setOpenApp("contact")}
@@ -82,7 +82,7 @@ function App() {
               </div>
               <div className={styles.appContent}>
                 {openApp === "about" && <About />}
-                {openApp === "work" && <Work />}
+                {openApp === "portfolio" && <Portfolio />}
                 {openApp === "contact" && <Contact />}
               </div>
             </div>
