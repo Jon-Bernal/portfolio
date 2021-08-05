@@ -1,7 +1,3 @@
-.portfolioPiece * {
-  /* border: 1px solid red; */
-}
-
 .portfolioPiece {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
