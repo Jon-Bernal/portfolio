@@ -1,16 +1,84 @@
+// import html from "../../images/html5.png";
+// import nodejs from "../../images/nodejs.png";
+
+const tech = {
+  html: {
+    name: "HTML",
+    img: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+    attribution: `W3C, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons`,
+  },
+  python: {
+    name: "Python",
+    img: `https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg`,
+    attribution: `www.python.org, GPL <http://www.gnu.org/licenses/gpl.html>, via Wikimedia Commons`,
+  },
+  node: {
+    name: "Node.js",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    attribution: `node.js authors, Public domain, via Wikimedia Commons`,
+  },
+  javascript: {
+    name: "JavaScript",
+    img: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
+    attribution: `Chris Williams, Public domain, via Wikimedia Commons`,
+  },
+  ts: {
+    name: "TypeScript",
+    img: `https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg`,
+    attribution: `™/®Microsoft, Public domain, via Wikimedia Commons`,
+  },
+  scss: {
+    name: "SCSS",
+    img: ``,
+    attribution: ``,
+  },
+  css: {
+    name: "CSS",
+    img: ``,
+    attribution: ``,
+  },
+  graphql: {
+    name: "GraphQL",
+    img: `https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg`,
+    attribution: `Facebook, BSD <http://opensource.org/licenses/bsd-license.php>, via Wikimedia Commons`,
+  },
+  go: {
+    name: "Go",
+    img: `https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg`,
+    attribution: `The Go Authors, Public domain, via Wikimedia Commons`,
+  },
+  redis: {
+    name: "Redis",
+    img: ``,
+    attribution: ``,
+  },
+  mongodb: {
+    name: "MongoDB",
+    img: ``,
+    attribution: ``,
+  },
+};
+
+const html =
+  "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg";
+// const css = "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+
 export const portfolioData = [
   {
     name: "Pluaris",
     shortDesc:
       "Pluaris enables its users to quickly analyze boatloads of unstructured data, extract actionable insights from all the critical touch points happening within their ecosystem.",
     techUsed: [
-      "Python",
-      "Node.js",
-      "TypeScript",
-      "GraphQL",
-      "Go",
-      "Redis",
-      "MongoDB",
+      tech.html,
+      tech.javascript,
+      tech.python,
+      tech.node,
+      tech.scss,
+      tech.go,
+      tech.graphql,
+      tech.mongodb,
+      tech.redis,
+      tech.ts,
     ],
     description:
       "Pluaris specializes in reading and comprehending data, analyzing cause and effect, identifying benchmarks and measuring performance against them, tracing and linking intelligence by topics, extracting critical intelligence, alerting, answering questions on-the-fly, and synthesizing outputs. This saves each employee an average of 2 hours per day. It accelerates the pace of business resulting in revenue growth and increased profitability.",

@@ -6,6 +6,7 @@
   --screen: white;
   --textColor: #323232;
   --accentText: #545454;
+  --appBackground: white;
 }
 
 /* Overhaul these to use ms as a prefix for all ms related colors and variables. */
@@ -18,6 +19,7 @@
   --mainColor: #c0c0c0;
   --accentColor: #000080; /* hyperlink blue */
   --background: #008080; /* weird green background */
+  --appBackground: white;
   --fontFamily: "MS Sans Serif";
 }
 /* MS Dark Mode */
