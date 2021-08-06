@@ -1,10 +1,13 @@
 // import html from "../../images/html5.png";
 // import nodejs from "../../images/nodejs.png";
+import semantic from "../../images/semantic-ui.png";
+import redis from "../../images/Redis_Logo.svg";
+import mongo from "../../images/mongodb-logo.png";
 
 const tech = {
   html: {
     name: "HTML",
-    img: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+    img: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg",
     attribution: `W3C, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons`,
   },
   python: {
@@ -29,13 +32,13 @@ const tech = {
   },
   scss: {
     name: "SCSS",
-    img: ``,
-    attribution: ``,
+    img: `https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg`,
+    attribution: `http://sass-lang.com/, Public domain, via Wikimedia Commons`,
   },
   css: {
     name: "CSS",
-    img: ``,
-    attribution: ``,
+    img: `https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg`,
+    attribution: `daPhyre (File:CSS3 and HTML5 logos and wordmarks.svg)Elfi (File:CSS3 logo and wordmark.svg)ExE Boss, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons`,
   },
   graphql: {
     name: "GraphQL",
@@ -49,19 +52,25 @@ const tech = {
   },
   redis: {
     name: "Redis",
-    img: ``,
-    attribution: ``,
+    img: redis,
+    attribution: `Carlos Prioglio, Public domain, via Wikimedia Commons.  I removed the word redis and adjusted the sizing accordingly`,
   },
   mongodb: {
     name: "MongoDB",
-    img: ``,
+    img: mongo,
+    attribution: ``,
+  },
+  linux: {
+    name: "Linux",
+    img: `https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg`,
+    attribution: `lewing@isc.tamu.edu Larry Ewing and The GIMP, CC0, via Wikimedia Commons`,
+  },
+  semantic: {
+    name: "Semantic UI",
+    img: semantic,
     attribution: ``,
   },
 };
-
-// const html =
-//   "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg";
-// const css = "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
 
 export const portfolioData = [
   {

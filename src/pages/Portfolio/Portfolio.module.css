@@ -17,7 +17,7 @@
 
 .ppImg {
   grid-area: img;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: auto;
   width: 100%;
   align-self: stretch;
@@ -47,7 +47,7 @@
 .ppTech__img {
   /* height: auto; */
   /* width: 100%; */
-  height: 50px;
+  height: auto;
   width: 50px;
   margin-right: 8px;
 }
