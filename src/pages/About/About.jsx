@@ -1,5 +1,5 @@
 // import jonImage from "../../images/Portfolio-headshot-pencil-small.png";
-import styles from "./About.module.css";
+import styles from "./About.module.scss";
 
 // import css from "../../images/css3.png";
 // import express from "../../images/express-js.png";

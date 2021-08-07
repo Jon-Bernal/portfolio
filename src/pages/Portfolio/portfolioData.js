@@ -1,8 +1,9 @@
 // import html from "../../images/html5.png";
-// import nodejs from "../../images/nodejs.png";
+import nodejs from "../../images/nodejs.png";
 import semantic from "../../images/semantic-ui.png";
 import redis from "../../images/Redis_Logo.svg";
 import mongo from "../../images/mongodb-logo.png";
+import pluarisDash from "../../images/pluaris-dashboard.png";
 
 const tech = {
   html: {
@@ -17,8 +18,10 @@ const tech = {
   },
   node: {
     name: "Node.js",
-    img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
-    attribution: `node.js authors, Public domain, via Wikimedia Commons`,
+    img: nodejs,
+    attribution: ``,
+    // img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    // attribution: `node.js authors, Public domain, via Wikimedia Commons`,
   },
   javascript: {
     name: "JavaScript",
@@ -80,14 +83,15 @@ export const portfolioData = [
     techUsed: [
       tech.html,
       tech.javascript,
-      tech.python,
-      tech.node,
-      tech.scss,
-      tech.go,
-      tech.graphql,
-      tech.mongodb,
-      tech.redis,
       tech.ts,
+      tech.python,
+      tech.go,
+      tech.scss,
+      tech.node,
+      tech.mongodb,
+      tech.graphql,
+      tech.redis,
+      tech.linux,
     ],
     description:
       "Pluaris specializes in reading and comprehending data, analyzing cause and effect, identifying benchmarks and measuring performance against them, tracing and linking intelligence by topics, extracting critical intelligence, alerting, answering questions on-the-fly, and synthesizing outputs. This saves each employee an average of 2 hours per day. It accelerates the pace of business resulting in revenue growth and increased profitability.",
@@ -97,7 +101,7 @@ export const portfolioData = [
       "On the frontend we are using React, along with TypeScript to handle the data and deliver rich user tailored expierences for our clients./n/n Your data Internal Memory, available to recall and curate a more personalized view into the inner workings of either your business or your brain in real-time.",
     devOpsDesc:
       "Our current cloud provider is Digital Ocean. We have some automation scripts in place to pull in the new code, run some tests, re-build, and deploy./n/n Our NodeJS servers are spread across multiple droplets and we are load-balancing and using reverse proxies./n/n A key piece of kit in this set up has been Caddy and man is it awesome! Much cleaner and easier to work with than an Nginx config. It handles auto SSL renewal with minimal fuss. And automating different servers to run different Caddyfile(s) has been a fantastic experience./n/n As we contine moving everything for production into Docker and finishing our move to K8s we will have the freedom to take our platform and deploy it on AWS, Google Cloud, Azure, or anywhere we need to go!",
-    thumbnail: { src: "http://google.com", alt: "pluaris dashboard" },
+    thumbnail: { src: pluarisDash, alt: "pluaris dashboard" },
     images: [
       { src: "1", caption: "" },
       { src: "2", caption: "" },

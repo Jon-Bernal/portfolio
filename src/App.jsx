@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { About } from "./pages/About/About";
 
-import "./index.css";
-import styles from "./App.module.css";
+import "./index.scss";
+import styles from "./App.module.scss";
 import { Portfolio } from "./pages/Portfolio/Portfolio";
 import { Contact } from "./pages/Contact";
 import OsMenu from "./OsMenu/OsMenu";
@@ -55,13 +55,13 @@ function App() {
               <RiHistoryFill className={styles.icon} />
               Portfolio
             </button>
-            <button
+            {/* <button
               onClick={() => setOpenApp("contact")}
               className={`${styles.iconBtn}`}
             >
               <RiMailSendLine className={styles.icon} />
               Contact Me
-            </button>
+            </button> */}
             {/* <button className={`${styles.iconBtn}`}>
             <FaRegTrashAlt className={styles.icon} />
             Trash

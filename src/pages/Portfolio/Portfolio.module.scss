@@ -1,0 +1,68 @@
+.container {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 3rem auto 1fr 2rem;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding: 20px;
+  grid-gap: 10px;
+  grid-template-areas:
+    "title title"
+    "img techStack"
+    "img desc"
+    "btns btns";
+
+  background: var(--mainColor);
+  // * {
+  //   border: 1px solid red;
+  //   color: black;
+  // }
+
+  .ppTitle {
+    grid-area: title;
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .ppImg {
+    grid-area: img;
+  }
+
+  .pptech {
+    grid-area: techStack;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ppTech__header {
+    font-size: 1.25rem;
+    margin: 0px;
+    margin-bottom: 20px;
+  }
+
+  .ppTech__div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .ppTech__img {
+    height: 75px;
+    width: 75px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ppDesc {
+    grid-area: desc;
+  }
+  .btnRow {
+    grid-area: btns;
+    display: flex;
+    justify-content: flex-end;
+    max-height: 2rem;
+  }
+}
