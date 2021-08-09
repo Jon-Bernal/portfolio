@@ -66,6 +66,16 @@ const PortfolioPiece = ({ name, back }) => {
         >
           Infastructure
         </button>
+        <button
+          onClick={() => {
+            setShow("Infastructure");
+          }}
+        >
+          Infastructure
+        </button>
+        <a href={data.link} target="_blank" rel="noreferrer">
+          <button>View Live</button>
+        </a>
       </div>
       <div className={styles.imgControls}>
         {show === "images" && (

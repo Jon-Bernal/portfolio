@@ -120,11 +120,7 @@ export const portfolioData = [
   
   As we contine moving everything for production into Docker and finishing our move to K8s we will have the freedom to take our platform and deploy it on AWS, Google Cloud, Azure, or anywhere we need to go!`,
     thumbnail: { src: pluarisDash, alt: `pluaris dashboard` },
-    images: [
-      { src: pluarisDash, caption: `pluaris dashboard` },
-      { src: `2`, caption: `` },
-      { src: `3`, caption: `` },
-    ],
+    images: [{ src: pluarisDash, caption: `pluaris dashboard` }],
     Position: `Full Stack`,
     Organization: `Nowigence Inc.`,
     Year: `2019 - current`,
@@ -178,13 +174,13 @@ export const portfolioData = [
     techUsed: [tech.html, tech.javascript, tech.css],
     description: `Lambda School put out a 2.5 day hackathon challenge for teams of up to 5 people.  I worked on this with two other engineers, Jonathan Palacio and Shawn Antonucci.  The problem we decided to solve was the difficulty around signing up for a group project or hackathon.  Previously there were issues with students accidentally erasing someone else's name from a group project since everything was done in a google sheet document.
     
-    We created Lambda group organizer so a spreadsheet of projects (csv) could be loaded into the system each month for the group signups and the system would take care of pulling out group names, descriptions, project proposals, number of students per role, etc.  The system would create a new named project session for students to sign up for by project role. Students would have a specific period in which they could sign up and then it would close.  The administrator could then download the updated csv of all the data with student's names and roles associated with each project.
-    
-    The system itself has three roles that are allowed, students, teachers assistants and admin.  The students could only sign up for a project.  The teacher's assistants could help with moving students from one group to another or adjusting group requirements as needed.  The admin could of course do anything.
-    
-    After we finished the hackathon we were asked to actually help them put the project into action for the school because they intended to use it for student group signups!  Everyone from the group got hired to companies while working on getting it production ready, but we trained our replacements before we moved on.  I hope lambda students are getting to enjoy working on it, it was a blast to make!
-    
-    Side note: Jonathan Palacio and Shawn Antonucci were amazing to work with. I couldn't recommend them as team members more strongly.  In fact Jon and I work together currently at Nowigence Inc!`,
+  We created Lambda group organizer so a spreadsheet of projects (csv) could be loaded into the system each month for the group signups and the system would take care of pulling out group names, descriptions, project proposals, number of students per role, etc.  The system would create a new named project session for students to sign up for by project role. Students would have a specific period in which they could sign up and then it would close.  The administrator could then download the updated csv of all the data with student's names and roles associated with each project.
+  
+  The system itself has three roles that are allowed, students, teachers assistants and admin.  The students could only sign up for a project.  The teacher's assistants could help with moving students from one group to another or adjusting group requirements as needed.  The admin could of course do anything.
+  
+  After we finished the hackathon we were asked to actually help them put the project into action for the school because they intended to use it for student group signups!  Everyone from the group got hired to companies while working on getting it production ready, but we trained our replacements before we moved on.  I hope lambda students are getting to enjoy working on it, it was a blast to make!
+  
+  Side note: Jonathan Palacio and Shawn Antonucci were amazing to work with. I couldn't recommend them as team members more strongly.  In fact Jon and I work together currently at Nowigence Inc!`,
     Backend: `This one is super simple.  We it on netlify and setup a simple CI/CD with github main branch.  The database was using Google Firebase for speed and ease of setup when it came to the hackathon, however it has since been ported to MongoDB I believe.`,
     Frontend: `React, Javascript, CSS and Semantic UI.  We needed the speed of a UI Library to quickly put something together that looked decent but was still somewhat modifiable.  If I were going to work on this for years I would strip Semantic UI from the project to be honest.  It can make for some messy css when you have to overide styles in a lot of places.`,
     Infastructure: `Not a whole lot to say here, pretty much everything was a managed service since we were going for speed.  That wouldn't be the case if we were going to hang on to this for a long time for cost reasons.`,

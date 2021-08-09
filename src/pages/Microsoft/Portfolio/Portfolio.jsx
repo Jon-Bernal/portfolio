@@ -38,10 +38,10 @@ export function Portfolio() {
       </div>
       <p className={styles.ppDesc}>{pd[idx].shortDesc}</p>
       <div className={styles.btnRow}>
+        <button onClick={() => setView(pd[idx].name)}>more</button>
         <button disabled={idx === 0} onClick={() => idx > 0 && setIdx(idx - 1)}>
           prev
         </button>
-        <button onClick={() => setView(pd[idx].name)}>more</button>
         <button
           disabled={idx >= pd.length - 1}
           onClick={() => idx < pd.length - 1 && setIdx(idx + 1)}
