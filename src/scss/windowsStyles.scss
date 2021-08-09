@@ -1,5 +1,4 @@
 :root {
-  /* Color */
   --surface: #c0c0c0;
   --button-highlight: #ffffff;
   --button-face: #dfdfdf;
@@ -11,7 +10,6 @@
   --dialog-gray-light: #b5b5b5;
   --link-blue: #0000ff;
 
-  /* Spacing */
   --element-spacing: 8px;
   --grouped-button-spacing: 4px;
   --grouped-element-spacing: 6px;
@@ -21,8 +19,9 @@
   --range-track-height: 4px;
   --range-spacing: 10px;
 
-  /* Some detailed computations for radio buttons and checkboxes */
-  --radio-total-width-precalc: var(--radio-width) + var(--radio-label-spacing);
+  --radio-total-width-precalc: calc(
+    var(--radio-width) + var(--radio-label-spacing)
+  );
   --radio-total-width: calc(var(--radio-total-width-precalc));
   --radio-left: calc(-1 * var(--radio-total-width-precalc));
   --radio-dot-width: 4px;
@@ -33,15 +32,15 @@
       ) / 2
   );
 
-  --checkbox-total-width-precalc: var(--checkbox-width) +
-    var(--radio-label-spacing);
-  --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
+  --checkbox-total-width-precalc: calc(
+    var(--checkbox-width) + var(--radio-label-spacing)
+  );
+  --checkbox-total-width: var(--checkbox-total-width-precalc);
   --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
   --checkmark-width: 7px;
   --checkmark-top: 3px;
   --checkmark-left: 3px;
 
-  /* Borders */
   --border-width: 1px;
   --border-raised-outer: inset -1px -1px var(--window-frame),
     inset 1px 1px var(--button-highlight);
@@ -52,13 +51,11 @@
   --border-sunken-inner: inset -2px -2px var(--button-face),
     inset 2px 2px var(--button-shadow);
 
-  /* Window borders flip button-face and button-highlight */
   --border-window-outer: inset -1px -1px var(--window-frame),
     inset 1px 1px var(--button-face);
   --border-window-inner: inset -2px -2px var(--button-shadow),
     inset 2px 2px var(--button-highlight);
 
-  /* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
   --border-field: inset -1px -1px var(--button-highlight),
     inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face),
     inset 2px 2px var(--window-frame);
@@ -457,7 +454,7 @@ select {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-  /* For some reason descenders are getting cut off without this */
+  // /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
 
@@ -646,7 +643,7 @@ ul.tree-view li {
 ul.tree-view ul {
   margin-left: 16px;
   padding-left: 16px;
-  /* Goes down too far */
+  // /* Goes down too far */
   border-left: 1px dotted #808080;
 }
 
@@ -663,7 +660,7 @@ ul.tree-view ul > li::before {
   border-bottom: 1px dotted #808080;
 }
 
-/* Cover the bottom of the left dotted border */
+// /* Cover the bottom of the left dotted border */
 ul.tree-view ul > li:last-child::after {
   content: "";
   display: block;
