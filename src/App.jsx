@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Microsoft from "./pages/Microsoft/Microsoft";
 import { useOsThemeContext } from "./context/allcontexts";
 

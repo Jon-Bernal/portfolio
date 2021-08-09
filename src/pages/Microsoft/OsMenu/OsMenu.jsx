@@ -4,7 +4,7 @@ import styles from "./OsMenu.module.scss";
 
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiWindows95 } from "react-icons/si";
-import { useOsThemeContext } from "../../../context/allcontexts/osContext";
+// import { useOsThemeContext } from "../../../context/allcontexts/osContext";
 
 const OsMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +24,7 @@ const OsMenu = () => {
 
       {/* Menu */}
       <div className={styles.menu} data-open={`${isOpen}`}>
+        coming soon...
         {/* <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
           Change Theme
         </button> */}

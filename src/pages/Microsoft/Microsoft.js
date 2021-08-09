@@ -1,13 +1,14 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact";
 import OsMenu from "./OsMenu/OsMenu";
 import { About } from "./About/About";
 import { useOsThemeContext } from "../../context/allcontexts/osContext";
 
-import { FaRegTrashAlt } from "react-icons/fa";
+// import { FaRegTrashAlt } from "react-icons/fa";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
+import { RiHistoryFill } from "react-icons/ri";
+// import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
 
 import "../../scss/windowsStyles.scss";
 import styles from "./Microsoft.module.scss";

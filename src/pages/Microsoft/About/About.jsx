@@ -12,8 +12,6 @@ import styles from "./About.module.scss";
 // import fastify from "../../images/fastify.png";
 // import graphql from "../../images/graphql-icon.svg";
 
-import { FaGrinWink } from "react-icons/fa";
-
 export function About() {
   return (
     <main className={styles.container}>
@@ -91,13 +89,13 @@ export function About() {
 //   rock climbing, hiking, reading, trail running or helping rehabilitate
 //   rabbits.
 // </p>
-{
-  /* <img
-  src={jonImage}
-  className={styles.headshot}
-  alt={"Jon Bernal, web dev extraordinaire"}
-/> */
-}
+// {
+//   /* <img
+//   src={jonImage}
+//   className={styles.headshot}
+//   alt={"Jon Bernal, web dev extraordinaire"}
+// /> */
+// }
 
 // <hr />
 
