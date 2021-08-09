@@ -10,16 +10,22 @@ const PortfolioPiece = ({ name, back }) => {
   const [idx, setIdx] = useState(0);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container}`}>
       <div className={styles.title}>
-        <h3>{data.name}</h3>
+        <h3>
+          {data.name} {show}:
+        </h3>
       </div>
       <div className={styles.content}>
         {show === "images" && (
-          <img src={data.images[idx].src} alt={data.images[idx].caption} />
+          <img
+            className={styles.imageContent}
+            src={data.images[idx].src}
+            alt={data.images[idx].caption}
+          />
         )}
         {show !== "images" && (
-          <div>
+          <div className={styles.textContent}>
             <ReactMarkdown>{data[show]}</ReactMarkdown>
           </div>
         )}
@@ -41,21 +47,21 @@ const PortfolioPiece = ({ name, back }) => {
         </button>
         <button
           onClick={() => {
-            setShow("frontendDesc");
+            setShow("Frontend");
           }}
         >
           Frontend
         </button>
         <button
           onClick={() => {
-            setShow("backendDesc");
+            setShow("Backend");
           }}
         >
           Backend
         </button>
         <button
           onClick={() => {
-            setShow("devOpsDesc");
+            setShow("Infastructure");
           }}
         >
           Infastructure
@@ -76,9 +82,9 @@ const PortfolioPiece = ({ name, back }) => {
           </>
         )}
       </div>
-      <button className={styles.back} onClick={back}>
-        back
-      </button>
+      <div className={styles.back}>
+        <button onClick={back}>back</button>
+      </div>
     </div>
   );
 };

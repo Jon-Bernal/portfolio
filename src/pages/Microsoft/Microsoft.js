@@ -32,7 +32,7 @@ const Microsoft = () => {
 
           <div className={styles.iconGroup}>
             <button
-              onClick={() => setOpenApp("about")}
+              onClick={() => setOpenApp("About")}
               className={`${styles.iconBtn}`}
             >
               <IoPersonCircleOutline className={`${styles.icon}`} />
@@ -46,16 +46,16 @@ const Microsoft = () => {
               Portfolio
             </button>
             {/* <button
-                  onClick={() => setOpenApp("contact")}
-                  className={`${styles.iconBtn}`}
-                >
-                  <RiMailSendLine className={styles.icon} />
-                  Contact Me
-                </button> */}
-            {/* <button className={`${styles.iconBtn}`}>
-                <FaRegTrashAlt className={styles.icon} />
-                Trash
-              </button> */}
+              onClick={() => setOpenApp("contact")}
+              className={`${styles.iconBtn}`}
+            >
+              <RiMailSendLine className={styles.icon} />
+              Contact Me
+            </button>
+            <button className={`${styles.iconBtn}`}>
+              <FaRegTrashAlt className={styles.icon} />
+              Trash
+            </button> */}
           </div>
 
           {/* ================== App section ================== */}
@@ -63,7 +63,7 @@ const Microsoft = () => {
             <div className={`window ${styles.appWindow}`}>
               {/* <div className={styles.appHeader}> */}
               <div className={`title-bar`}>
-                <dipv className={`title-bar-text`}>{openApp}</dipv>
+                <div className={`title-bar-text`}>{openApp}</div>
                 <div className={`title-bar-controls`}>
                   <button
                     // className={styles.closeBtn}

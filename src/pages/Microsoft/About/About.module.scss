@@ -17,8 +17,11 @@
   }
 
   .headshot {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    // position: absolute;
+    // top: 15px;
+    // right: 15px;
+    width: 30%;
+    float: right;
+    filter: contrast(0.65);
   }
 }
