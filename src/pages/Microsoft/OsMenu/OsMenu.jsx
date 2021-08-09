@@ -4,8 +4,9 @@ import styles from "./OsMenu.module.scss";
 
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiWindows95 } from "react-icons/si";
+import { useOsThemeContext } from "../../../context/allcontexts/osContext";
 
-const OsMenu = ({ theme, setTheme }) => {
+const OsMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clock, setClock] = useState(new Date().toLocaleTimeString());
 
@@ -15,10 +16,6 @@ const OsMenu = ({ theme, setTheme }) => {
     }, 1000);
   }, [clock]);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [theme]);
-
   return (
     <div className={styles.container}>
       <button className={styles.osMenuBtn} onClick={() => setIsOpen(!isOpen)}>
@@ -27,9 +24,9 @@ const OsMenu = ({ theme, setTheme }) => {
 
       {/* Menu */}
       <div className={styles.menu} data-open={`${isOpen}`}>
-        <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
+        {/* <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
           Change Theme
-        </button>
+        </button> */}
       </div>
 
       {/* contact me system tray */}

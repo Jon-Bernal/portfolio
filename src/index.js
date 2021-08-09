@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./App";
-import "./css/baseStyles.scss";
+import "./scss/baseStyles.scss";
 import reportWebVitals from "./reportWebVitals";
+import { ContextProvider } from "./context/providerComposer";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

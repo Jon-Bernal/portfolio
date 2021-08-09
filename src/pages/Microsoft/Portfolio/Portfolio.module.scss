@@ -1,3 +1,5 @@
+@import "../../../scss/mixins.scss";
+
 .container {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -29,6 +31,7 @@
 
   .ppImg {
     grid-area: img;
+    @include inset;
   }
 
   .pptech {
@@ -58,11 +61,19 @@
 
   .ppDesc {
     grid-area: desc;
+    @include inset;
+    background: white;
+    padding: 12px 8px;
+    margin: 0;
   }
   .btnRow {
     grid-area: btns;
     display: flex;
     justify-content: flex-end;
     max-height: 2rem;
+    button {
+      // font-weight: bold;
+      // font-size: 0.8rem;
+    }
   }
 }

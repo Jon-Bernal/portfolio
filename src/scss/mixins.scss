@@ -1,0 +1,16 @@
+@mixin inset {
+  box-shadow: var(--border-field);
+  padding: 3px;
+}
+
+@mixin outset {
+  // border-left: 3px solid #191919;
+  // border-top: 3px solid #191919;
+  // border-right: 3px solid #ededed;
+  // border-bottom: 3px solid #ededed;
+
+  border-right: 3px solid #191919;
+  border-bottom: 3px solid #191919;
+  border-left: 3px solid #ededed;
+  border-top: 3px solid #ededed;
+}
