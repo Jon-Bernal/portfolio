@@ -8,7 +8,7 @@ import mongo from "../../../images/mongodb-logo.png";
 import pluarisDash from "../../../images/pluaris-dashboard.png";
 
 // ========== Portfolio Items ========== //
-import portfolioDesktopImage from "../../../images/portfolio_desktop.jpg";
+import portfolioDesktopImage from "../../../images/portfolio_desktop.png";
 import gameOfLifeFlower from "../../../images/game-of-life.jpg";
 import groupOrg1 from "../../../images/group-org1.jpg";
 import groupOrg2 from "../../../images/group-org2.jpg";
@@ -127,48 +127,6 @@ export const portfolioData = [
     link: `https://app.nowigence.ai/`,
   },
   {
-    name: `Portfolio Site`,
-    shortDesc: `The site you're looking at right now!`,
-    techUsed: [tech.html, tech.javascript, tech.scss],
-    description: `One of the most fun projects I've had the chance to work on with such potential for growth and change!  I'm really excited to see where this goes.  I plan to keep adding all sorts of fun easter eggs and fun little jokes.  This sit will never be truely finished, but I hope you enjoy what I've created!`,
-    Backend: `This one is super simple.  I've hosted it on netlify and setup a simple CI/CD with github main branch.  In the future when I have a little more spare time, I'll put this up on Digital Ocean and use Caddy to serve it up.`,
-    Frontend: `pure react and my blood sweat and cheers.`,
-    Infastructure: ``,
-    thumbnail: { src: portfolioDesktopImage, alt: `pluaris dashboard` },
-    images: [
-      { src: `1`, caption: `` },
-      { src: `2`, caption: `` },
-      { src: `3`, caption: `` },
-    ],
-    Position: ``,
-    Organization: `Me`,
-    Year: `Aug 2020 - current`,
-    link: `https://jon-bernal.netlify.app`,
-  },
-  {
-    name: `Conway's Game Of Life`,
-    shortDesc: `This was a challenge to see if I could implement Conway's Game of Life using react.  A challenge for learning more about how video games work and having fun with graph data structures!`,
-    techUsed: [tech.html, tech.javascript, tech.css],
-    description: `Please keep in mind this was not about making a pretty application.  This was a 5 day test to see if I could make [conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) happen with react.  The game itself is challenging for a new software engineer because you have to handle graph data structures and control frame rates to make sure the machine doesn't lock up. This was an extremely enjoyable game to write and I'll probably revisit this some day in the future to see if I can increase the performance and make it look nicer.`,
-    Backend: `This one is super simple.  I've hosted it on netlify and setup a simple CI/CD with github main branch.  In the future when I have a little more spare time, I'll put this up on Digital Ocean and use Caddy to serve it up.`,
-    Frontend: `React, Javascript and CSS.  Nothing crazy here, but I did have a little extra fun with the menu system since I finished the project a day early.`,
-    Infastructure: `Nothing to really say here, sorry.  Since it's hosted on Netlify there weren't really many decisions to make.`,
-    thumbnail: {
-      src: gameOfLifeFlower,
-      alt: `Conway's game of life with the flower formation`,
-    },
-    images: [
-      {
-        src: gameOfLifeFlower,
-        caption: `Conway's game of life with the flower formation`,
-      },
-    ],
-    Position: ``,
-    Organization: `Me`,
-    Year: `July 15 2019 - July 19 2019`,
-    link: `https://conways-life-game.netlify.app/`,
-  },
-  {
     name: `Lambda Group Organizer`,
     shortDesc: `This was a hackathon winning app to help lambda school students sign up for projects.`,
     techUsed: [tech.html, tech.javascript, tech.css],
@@ -214,5 +172,47 @@ export const portfolioData = [
     Organization: `Me`,
     Year: `July 15 2019 - July 19 2019`,
     link: `https://lambda-group-organizer.netlify.app`,
+  },
+  {
+    name: `Portfolio Site`,
+    shortDesc: `The site you're looking at right now!`,
+    techUsed: [tech.html, tech.javascript, tech.scss],
+    description: `One of the most fun projects I've had the chance to work on with such potential for growth and change!  I'm really excited to see where this goes.  I plan to keep adding all sorts of fun easter eggs and fun little jokes.  This sit will never be truely finished, but I hope you enjoy what I've created!`,
+    Backend: `This one is super simple.  I've hosted it on netlify and setup a simple CI/CD with github main branch.  In the future when I have a little more spare time, I'll put this up on Digital Ocean and use Caddy to serve it up.`,
+    Frontend: `pure react and my blood sweat and cheers.`,
+    Infastructure: ``,
+    thumbnail: { src: portfolioDesktopImage, alt: `pluaris dashboard` },
+    images: [
+      { src: `1`, caption: `` },
+      { src: `2`, caption: `` },
+      { src: `3`, caption: `` },
+    ],
+    Position: ``,
+    Organization: `Me`,
+    Year: `Aug 2020 - current`,
+    link: `https://jon-bernal.netlify.app`,
+  },
+  {
+    name: `Conway's Game Of Life`,
+    shortDesc: `This was a challenge to see if I could implement Conway's Game of Life using react.  A challenge for learning more about how video games work and having fun with graph data structures!`,
+    techUsed: [tech.html, tech.javascript, tech.css],
+    description: `Please keep in mind this was not about making a pretty application.  This was a 5 day test to see if I could make [conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) happen with react.  The game itself is challenging for a new software engineer because you have to handle graph data structures and control frame rates to make sure the machine doesn't lock up. This was an extremely enjoyable game to write and I'll probably revisit this some day in the future to see if I can increase the performance and make it look nicer.`,
+    Backend: `This one is super simple.  I've hosted it on netlify and setup a simple CI/CD with github main branch.  In the future when I have a little more spare time, I'll put this up on Digital Ocean and use Caddy to serve it up.`,
+    Frontend: `React, Javascript and CSS.  Nothing crazy here, but I did have a little extra fun with the menu system since I finished the project a day early.`,
+    Infastructure: `Nothing to really say here, sorry.  Since it's hosted on Netlify there weren't really many decisions to make.`,
+    thumbnail: {
+      src: gameOfLifeFlower,
+      alt: `Conway's game of life with the flower formation`,
+    },
+    images: [
+      {
+        src: gameOfLifeFlower,
+        caption: `Conway's game of life with the flower formation`,
+      },
+    ],
+    Position: ``,
+    Organization: `Me`,
+    Year: `July 15 2019 - July 19 2019`,
+    link: `https://conways-life-game.netlify.app/`,
   },
 ];
