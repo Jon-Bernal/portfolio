@@ -219,13 +219,19 @@
     /* margin: 0 auto; */
   }
 
+  .desktop {
+    height: calc(100vh - 52px);
+  }
+
   .appWindow {
-    position: fixed;
+    // position: fixed;
     max-height: 90vh;
     max-width: 90vw;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    max-height: 50vh;
+    max-width: 50vw;
+    // top: 25%;
+    // left: 22%;
+    // transform: translateX(-50%) translateY(-50%);
     overflow: hidden;
     /* max-width: 1120px; */
 
