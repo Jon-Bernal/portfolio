@@ -23,68 +23,29 @@ import Draggable from "react-draggable";
 
 const Microsoft = () => {
   const { theme, setTheme } = useOsThemeContext();
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [difference, setDifference] = useState({ x: 0, y: 0 });
   const [canDrag, setCanDrag] = useState(false);
   const [openApp, setOpenApp] = useState("");
-  const [dragEls, setDragEls] = useState({ appWindow: null, header: null });
-
-  // useEffect(() => {
-  //   console.log("===============================");
-  //   console.log("position :>> ", position);
-  //   console.log("canDrag :>> ", canDrag);
-  //   console.log("openApp :>> ", openApp);
-  //   console.log("dragEls :>> ", dragEls);
-  // }, [position, canDrag, openApp, dragEls]);
-
-  // ---------- window drag section ---------- //
-  // when app window first appears (i.e. open App happens), the position needs to be set based off it's initial x and y by pixel, not by percent (what's in the scss to center it). After that, it is hopefully a simple, when mouse moves change the translateX and translateY to match the movement.  Might not be that easy, but that's first simple guess at this.
-
-  useEffect(() => {
-    const header = document.querySelector("#draghandle");
-    const appWindow = document.querySelector("#draggable");
-
-    if (header && appWindow) {
-      setDragEls({ appWindow, header });
-      //   console.log("header && appWindow true");
-      //   dragElement(appWindow, header);
-      //   function dragElement(ele, ele2) {
-      //     var pos1 = 0,
-      //       pos2 = 0,
-      //       pos3 = 0,
-      //       pos4 = 0;
-      //     ele2.onmousedown = dragMouseDown;
-      //     function dragMouseDown(e) {
-      //       e = e || window.event;
-      //       pos3 = e.clientX;
-      //       pos4 = e.clientY;
-      //       document.onmouseup = closeDragElement;
-      //       document.onmousemove = elementDrag;
-      //     }
-      //     function elementDrag(e) {
-      //       e = e || window.event;
-      //       pos1 = pos3 - e.clientX;
-      //       pos2 = pos4 - e.clientY;
-      //       pos3 = e.clientX;
-      //       pos4 = e.clientY;
-      //       ele.style.top = ele.offsetTop - pos2 + "px";
-      //       ele.style.left = ele.offsetLeft - pos1 + "px";
-      //     }
-      //     function closeDragElement() {
-      //       document.onmouseup = null;
-      //       document.onmousemove = null;
-      //     }
-      //   }
-    }
-
-    return () => {};
-  }, [openApp]);
 
   // ---------- end window drag section ---------- //
 
   return (
     <>
       {/* ================== crt screen section ================== */}
-      <div className={`App ${styles.container}`} data-theme={theme}>
+      <div
+        className={`App ${styles.container}`}
+        data-theme={theme}
+        onMouseMove={(e) => {
+          if (canDrag) {
+            const appWindow = document.querySelector("#draggable");
+            appWindow.style.left = e.clientX - difference.x + "px";
+            appWindow.style.top = e.clientY - difference.y + "px";
+          }
+        }}
+        onMouseUp={(e) => {
+          setCanDrag(false);
+        }}
+      >
         <div className={styles.screen}>
           <div className={styles.desktop}>
             {/* ================== Green Input Overlay ================== */}
@@ -130,43 +91,20 @@ const Microsoft = () => {
                   onMouseDown={(e) => {
                     e = e || window.event;
                     setCanDrag(true);
-                    setPosition({ x: e.clientX, y: e.clientY });
-                  }}
-                  onMouseMove={(e) => {
-                    if (canDrag) {
-                      // console.log("DRAGGING");
-                      // console.log("e.clientX :>> ", e.clientX);
-                      // console.log("e.clientY :>> ", e.clientY);
-                      // console.log(
-                      //   "dragEls.appWindow.style.top :>> ",
-                      //   dragEls.appWindow.style.top
-                      // );
-                      // console.log(
-                      //   "dragEls.appWindow.style.offsetTop :>> ",
-                      //   dragEls.appWindow.style.offsetTop
-                      // );
-                      const header = document.querySelector("#draghandle");
-                      const appWindow = document.querySelector("#draggable");
-                      console.log("appWindow :>> ", appWindow);
-                      console.log("e.clientX :>> ", e.clientX);
-                      console.log(
-                        "appWindow.style.top :>> ",
-                        appWindow.style.top
-                      );
+                    const appWindow = document.querySelector("#draggable");
+                    const app = {
+                      left: appWindow.getBoundingClientRect().left,
+                      top: appWindow.getBoundingClientRect().top,
+                    };
+                    setDifference({
+                      x: e.clientX - app.left,
+                      y: e.clientY - app.top,
+                    });
 
-                      // Probably an issue with appWindow's offsetTop ruining the string.  Investigate more tomorrow.
-                      appWindow.style.top =
-                        appWindow.style.offsetTop - e.clientX + "px";
-                      appWindow.style.left =
-                        appWindow.style.offsetLeft - e.clientY + "px";
-                      console.log(
-                        "appWindow.style.top :>> ",
-                        appWindow.style.top
-                      );
-                    }
-                  }}
-                  onMouseUp={(e) => {
-                    setCanDrag(false);
+                    // set app window left and top to make for simple drags
+                    appWindow.style.left = app.left + "px";
+                    appWindow.style.top = app.top + "px";
+                    appWindow.style.transform = "none";
                   }}
                   id="draghandle"
                 >
