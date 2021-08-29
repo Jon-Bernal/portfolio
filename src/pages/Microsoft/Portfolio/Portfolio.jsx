@@ -27,6 +27,7 @@ export function Portfolio() {
             return (
               // <span className={styles.ppTech__name}>{t.name}</span>
               <img
+                key={t.name}
                 className={styles.ppTech__img}
                 src={t.img}
                 alt={t.name}
