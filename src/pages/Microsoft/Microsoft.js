@@ -38,8 +38,10 @@ const Microsoft = () => {
         onMouseMove={(e) => {
           if (canDrag) {
             const appWindow = document.querySelector("#draggable");
-            appWindow.style.left = e.clientX - difference.x + "px";
-            appWindow.style.top = e.clientY - difference.y + "px";
+            const left = e.clientX - difference.x;
+            const top = e.clientY - difference.y;
+            appWindow.style.left = left + "px";
+            appWindow.style.top = top > 0 ? top + "px" : "0px";
           }
         }}
         onMouseUp={(e) => {

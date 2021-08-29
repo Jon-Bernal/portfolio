@@ -13,6 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  position: relative;
+  border-top: 3px solid #f5f5f5;
 
   .osMenuBtn {
     padding: 3px 10px;
