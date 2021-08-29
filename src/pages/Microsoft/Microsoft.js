@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact";
 import OsMenu from "./OsMenu/OsMenu";
@@ -12,7 +12,6 @@ import { RiHistoryFill } from "react-icons/ri";
 
 import "../../scss/windowsStyles.scss";
 import styles from "./Microsoft.module.scss";
-import Draggable from "react-draggable";
 
 // const initState = {
 //   theme: "ms",

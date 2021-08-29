@@ -9,7 +9,6 @@
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-draggable": "^4.4.3",
     "react-icons": "^4.2.0",
     "react-markdown": "^6.0.3",
     "react-scripts": "4.0.3",
