@@ -1,27 +1,50 @@
 @import "../../../scss/mixins.scss";
 
 .container {
+  // display: grid;
+  // grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  // grid-template-rows: 3rem auto 1fr 2rem;
+  // align-items: start;
+  // min-width: 1100px;
+  // width: 100%;
+  // height: 100%;
+  // max-height: 100%;
+  // max-width: 100%;
+  // padding: 20px;
+  // grid-gap: 15px;
+  // grid-template-areas:
+  //   "title title"
+  //   "img techStack"
+  //   "img desc"
+  //   "btns btns";
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 3rem auto 1fr 2rem;
-  align-items: start;
-  min-width: 1100px;
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  padding: 20px;
-  grid-gap: 15px;
+  grid-template-columns: minmax(0, auto) minmax(0, auto);
+  grid-template-rows: 3rem minmax(0, auto) 1fr 2rem;
   grid-template-areas:
     "title title"
     "img techStack"
     "img desc"
     "btns btns";
+  grid-gap: 15px;
+  align-items: start;
+  padding: 20px;
 
   background: var(--mainColor);
   // * {
   //   border: 1px solid red;
   //   color: black;
   // }
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 100%;
+    grid-template-rows: 3rem auto auto auto 2rem;
+    grid-template-areas:
+      "title"
+      "img"
+      "techStack"
+      "desc"
+      "btns";
+  }
 
   .ppTitle {
     grid-area: title;
@@ -33,6 +56,8 @@
   .ppImg {
     grid-area: img;
     @include inset;
+    // max-width: 1300px;
+    max-height: 55vh;
   }
 
   .pptech {
@@ -52,6 +77,10 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
+    max-width: 300px;
+    @media (max-width: 1100px) {
+      max-width: unset;
+    }
   }
   .ppTech__img {
     height: auto;
@@ -69,6 +98,10 @@
     max-height: 244px;
     overflow: auto;
     font-size: 1.15rem;
+    max-width: 300px;
+    @media (max-width: 1100px) {
+      max-width: unset;
+    }
   }
   .btnRow {
     grid-area: btns;

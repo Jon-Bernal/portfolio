@@ -235,8 +235,10 @@
     height: max-content;
     width: max-content;
     transform: translate(-50%, -50%);
-    max-height: calc(75vh - 52px);
-    max-width: 80vw;
+    // max-height: calc(75vh - 52px);
+    max-height: calc(90vh - 52px);
+    // max-width: 80vw;
+    max-width: 90vw;
     @media (max-width: 420px) {
       top: 0;
       left: 0;
@@ -253,7 +255,8 @@
     width: 100%;
     background: var(--appBackground);
 
-    max-height: calc(75vh - 52px - 40px);
+    // max-height: calc(75vh - 52px - 40px);
+    max-height: calc(90vh - 52px - 40px);
     height: calc(100% - (1.1rem + 12px));
     @media (max-width: 420px) {
       height: calc(100vh - 52px);
