@@ -234,7 +234,7 @@
     left: 50%;
     height: max-content;
     width: max-content;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, calc(-50% - 26px));
     // max-height: calc(75vh - 52px);
     max-height: calc(90vh - 52px);
     // max-width: 80vw;
@@ -259,7 +259,7 @@
     max-height: calc(90vh - 52px - 40px);
     height: calc(100% - (1.1rem + 12px));
     @media (max-width: 420px) {
-      height: calc(100vh - 52px);
+      height: unset;
       max-height: calc(100vh - 52px - 30px);
     }
   }

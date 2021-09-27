@@ -3,7 +3,7 @@
 .container {
   display: grid;
   grid-template-columns: auto 150px;
-  grid-template-rows: 100px auto 2rem;
+  grid-template-rows: minmax(100px, max-content) auto 2rem;
   grid-template-areas:
     "title title"
     "content navBtns"
@@ -14,6 +14,18 @@
   max-height: 100%;
   max-width: 100%;
   background: #c0c0c0;
+
+  @media (max-width: 750px) {
+    grid-template-columns: auto 100px;
+    grid-template-rows: minmax(100px, auto) auto auto 2rem;
+    padding: 10px;
+    grid-template-areas:
+      "title title"
+      "content content"
+      "navBtns navBtns"
+      "imgControls back";
+  }
+
   button {
     font-size: 0.8rem;
   }
@@ -46,6 +58,9 @@
   max-width: 1000px;
   overflow: auto;
   font-size: 1.15rem;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 }
 
 .navBtns {
@@ -56,12 +71,24 @@
   a {
     display: block;
     width: 100%;
-    button {
-      width: 100%;
-    }
+    margin-left: 0.5rem;
+    // button {
+    //   width: 100%;
+    // }
   }
   button {
     margin-bottom: 0.5rem;
+  }
+  @media (max-width: 750px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 0px;
+    a {
+      display: inline-block;
+      width: unset;
+      margin-left: 0.5rem;
+    }
   }
 }
 
