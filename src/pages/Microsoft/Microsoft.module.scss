@@ -84,6 +84,17 @@
 ::-webkit-scrollbar-button:vertical:increment {
   height: 0px;
 }
+// /* Up button */
+::-webkit-scrollbar-button:horizontal:decrement {
+  height: 0px;
+  width: 0px;
+}
+
+// /* Down button */
+::-webkit-scrollbar-button:horizontal:increment {
+  height: 0px;
+  width: 0px;
+}
 
 .container {
   background: #121010;
