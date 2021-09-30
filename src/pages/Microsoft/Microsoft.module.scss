@@ -232,7 +232,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    height: max-content;
+    // height: max-content;
+    height: auto;
     width: max-content;
     transform: translate(-50%, calc(-50% - 26px));
     // max-height: calc(75vh - 52px);
