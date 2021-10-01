@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap");
+
 .container {
   background: var(--accentText);
   width: 100%;
@@ -42,24 +44,68 @@
     transform: rotate(-0.06turn);
   }
 
+  // ---------- Start menu container ---------- //
   .menu {
     position: absolute;
     bottom: 100%;
     border: 2px solid var(--mainColor);
     background: var(--mainColor);
+    display: flex;
+    flex-direction: row;
+    max-height: 300px;
   }
   .menu[data-open="false"] {
     display: none;
   }
 
-  .menu > button {
-    padding: 10px 30px;
-    color: var(--textColor);
-    border: none;
-    /* background: var(--screen); */
-    font-size: 1.15rem;
-    font-weight: bold;
+  // ---------- Start menu OS Label ---------- //
+  .osNameLabel {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    // height: 100%;
+    font-size: 2rem;
+    background: gray;
+    padding: 10px 0 0 0;
+    margin: 0;
+    line-height: 1;
+    .osNameBold {
+      padding: 0;
+      margin: 0;
+      font-weight: bold;
+      font-family: "Work Sans", sans-serif;
+    }
   }
+
+  // ---------- Start Menu Main Menu (top level) ---------- //
+  .appSectionList {
+    display: flex;
+    flex-direction: column;
+    button {
+      width: 100%;
+      font-size: 1.25rem;
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      text-align: left;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      padding: 10px;
+      &:hover {
+        background: blue;
+        color: white;
+      }
+      .appSectionListIcons {
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // ---------- System Tray ---------- //
 
   .systemTray {
     display: flex;

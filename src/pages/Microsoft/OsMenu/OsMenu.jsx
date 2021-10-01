@@ -4,6 +4,7 @@ import styles from "./OsMenu.module.scss";
 
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiWindows95 } from "react-icons/si";
+import { AiOutlineFolderOpen } from "react-icons/ai";
 // import { useOsThemeContext } from "../../../context/allcontexts/osContext";
 
 const OsMenu = () => {
@@ -18,18 +19,31 @@ const OsMenu = () => {
 
   return (
     <div className={styles.container}>
+      {/* ---------- Start Menu Button ---------- */}
       <button className={styles.osMenuBtn} onClick={() => setIsOpen(!isOpen)}>
         <SiWindows95 className={styles.osLogo} /> Start
       </button>
 
-      {/* Menu */}
+      {/* ---------- Start Menu ---------- */}
       <div className={styles.menu} data-open={`${isOpen}`}>
-        {/* <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
+        <div className={styles.osNameLabel}>
+          <span className={styles.osNameBold}>Casement</span>95
+        </div>
+        <div className={styles.appSectionList}>
+          <button onClick={() => console.log('open "programs')}>
+            <AiOutlineFolderOpen className={styles.appSectionListIcons} />{" "}
+            Programs
+          </button>
+          <button onClick={() => console.log("open change theme list")}>
+            change Theme
+          </button>
+          {/* <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
           Change Theme
         </button> */}
+        </div>
       </div>
 
-      {/* contact me system tray */}
+      {/* ---------- contact me system tray ---------- */}
       <div className={styles.systemTray}>
         <a
           href="https://github.com/Jon-Bernal"

@@ -70,17 +70,6 @@ const Microsoft = () => {
                 <RiHistoryFill className={styles.icon} />
                 Portfolio
               </button>
-              {/* <button
-              onClick={() => setOpenApp("contact")}
-              className={`${styles.iconBtn}`}
-            >
-              <RiMailSendLine className={styles.icon} />
-              Contact Me
-            </button>
-            <button className={`${styles.iconBtn}`}>
-              <FaRegTrashAlt className={styles.icon} />
-              Trash
-            </button> */}
             </div>
 
             {/* ================== App section ================== */}
@@ -102,7 +91,6 @@ const Microsoft = () => {
                       y: e.clientY - app.top,
                     });
 
-                    // set app window left and top to make for simple drags
                     appWindow.style.left = app.left + "px";
                     appWindow.style.top = app.top + "px";
                     appWindow.style.transform = "none";
@@ -111,11 +99,7 @@ const Microsoft = () => {
                 >
                   <div className={`title-bar-text`}>{openApp}</div>
                   <div className={`title-bar-controls`}>
-                    <button
-                      // className={styles.closeBtn}
-                      aria-label="Close"
-                      onClick={() => setOpenApp("")}
-                    />
+                    <button aria-label="Close" onClick={() => setOpenApp("")} />
                   </div>
                 </div>
                 <div
