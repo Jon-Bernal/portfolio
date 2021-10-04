@@ -21,7 +21,7 @@ import styles from "./OsMenu.module.scss";
 
 const OsMenu = () => {
   const { msState, msDispatch } = useContext(MsContext);
-  const { showOsMenu, subMenu, openApp } = msState;
+  const { showOsMenu } = msState;
   const [clock, setClock] = useState(new Date().toLocaleTimeString());
 
   useEffect(() => {
