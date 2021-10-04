@@ -24,7 +24,3 @@ export const OsThemeProvider = (props) => {
     </OsThemeContext.Provider>
   );
 };
-
-export const useOsThemeContext = () => {
-  return useContext(OsThemeContext);
-};

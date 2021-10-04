@@ -1,31 +1,26 @@
-import jonImage from "../../../images/Portfolio-headshot-pencil-small.png";
+import jonImage from "../../../assets/images/Portfolio-headshot-pencil-small.png";
 import styles from "./About.module.scss";
 
-// import css from "../../images/css3.png";
-// import express from "../../images/express-js.png";
-// import html from "../../images/html5.png";
-// import javascript from "../../images/javascript.png";
-// import mongodb from "../../images/mongodb.png";
-// import node from "../../images/nodejs.png";
-// import rest from "../../images/restfulAPI.png";
-// import semantic from "../../images/semantic-ui.png";
-// import fastify from "../../images/fastify.png";
-// import graphql from "../../images/graphql-icon.svg";
+// import css from "../../assets/images/css3.png";
+// import express from "../../assets/images/express-js.png";
+// import html from "../../assets/images/html5.png";
+// import javascript from "../../assets/images/javascript.png";
+// import mongodb from "../../assets/images/mongodb.png";
+// import node from "../../assets/images/nodejs.png";
+// import rest from "../../assets/images/restfulAPI.png";
+// import semantic from "../../assets/images/semantic-ui.png";
+// import fastify from "../../assets/images/fastify.png";
+// import graphql from "../../assets/images/graphql-icon.svg";
 
 export function About() {
   return (
     <main className={styles.container}>
-      {/* ======================= New Stuff ==================== */}
-      {/* Penciled image of me here */}
-
       <h3>Hello! My name is Jon Bernal.</h3>
-
       <img
         src={jonImage}
         className={styles.headshot}
         alt={"Jon Bernal, web dev extraordinaire"}
       />
-
       <p>
         I grew up in Northern Virginia and now live in Washington State as a
         Software Engineer at{" "}

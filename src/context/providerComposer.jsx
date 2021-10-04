@@ -1,5 +1,5 @@
 import React from "react";
-import { OsThemeProvider } from "./allcontexts/index";
+import { OsThemeProvider, MsProvider } from "./allcontexts/index";
 
 function ProviderComposer({ contexts, children }) {
   return contexts.reduceRight(
@@ -13,7 +13,7 @@ function ProviderComposer({ contexts, children }) {
 
 function ContextProvider({ children }) {
   return (
-    <ProviderComposer contexts={[<OsThemeProvider />]}>
+    <ProviderComposer contexts={[<OsThemeProvider />, <MsProvider />]}>
       {children}
     </ProviderComposer>
   );

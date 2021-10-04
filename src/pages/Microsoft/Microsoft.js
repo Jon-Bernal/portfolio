@@ -1,30 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Portfolio } from "./Portfolio/Portfolio";
 import { Contact } from "./Contact";
 import OsMenu from "./OsMenu/OsMenu";
 import { About } from "./About/About";
-import { useOsThemeContext } from "../../context/allcontexts/osContext";
+import { OsThemeContext, MsContext } from "../../context/allcontexts";
 
-// import { FaRegTrashAlt } from "react-icons/fa";
-import { IoPersonCircleOutline } from "react-icons/io5";
-import { RiHistoryFill } from "react-icons/ri";
-// import { RiHistoryFill, RiMailSendLine } from "react-icons/ri";
+// New Icons
+import Person from "../../assets/svg/Person";
+import History from "../../assets/svg/History";
 
 import "../../scss/windowsStyles.scss";
 import styles from "./Microsoft.module.scss";
 
-// const initState = {
-//   theme: "ms",
-//   openApp: "",
-//   // app drag section
-//   position: { x: "", y: "" },
-// };
-
 const Microsoft = () => {
-  const { theme, setTheme } = useOsThemeContext();
+  const { theme, setTheme } = useContext(OsThemeContext);
+  const { msState, msDispatch } = useContext(MsContext);
+
   const [difference, setDifference] = useState({ x: 0, y: 0 });
   const [canDrag, setCanDrag] = useState(false);
-  const [openApp, setOpenApp] = useState("");
 
   // ---------- end window drag section ---------- //
 
@@ -57,25 +50,28 @@ const Microsoft = () => {
 
             <div className={styles.iconGroup}>
               <button
-                onClick={() => setOpenApp("About")}
-                className={`${styles.iconBtn}`}
+                onClick={() =>
+                  msDispatch({ type: "change open app", app: "About" })
+                }
+                className={styles.iconBtn}
               >
-                <IoPersonCircleOutline className={`${styles.icon}`} />
+                <Person className={styles.icon} />
                 About Me
               </button>
               <button
-                onClick={() => setOpenApp("Portfolio")}
+                onClick={() =>
+                  msDispatch({ type: "change open app", app: "Portfolio" })
+                }
                 className={styles.iconBtn}
               >
-                <RiHistoryFill className={styles.icon} />
+                <History className={styles.icon} />
                 Portfolio
               </button>
             </div>
 
             {/* ================== App section ================== */}
-            {!!openApp && (
+            {!!msState.openApp && (
               <div className={`window ${styles.appWindow}`} id="draggable">
-                {/* <div className={styles.appHeader}> */}
                 <div
                   className={`title-bar box`}
                   onMouseDown={(e) => {
@@ -97,9 +93,14 @@ const Microsoft = () => {
                   }}
                   id="draghandle"
                 >
-                  <div className={`title-bar-text`}>{openApp}</div>
+                  <div className={`title-bar-text`}>{msState?.openApp}</div>
                   <div className={`title-bar-controls`}>
-                    <button aria-label="Close" onClick={() => setOpenApp("")} />
+                    <button
+                      aria-label="Close"
+                      onClick={() =>
+                        msDispatch({ type: "change open app", app: "" })
+                      }
+                    />
                   </div>
                 </div>
                 <div
@@ -109,9 +110,9 @@ const Microsoft = () => {
                     e.stopPropagation();
                   }}
                 >
-                  {openApp === "About" && <About />}
-                  {openApp === "Portfolio" && <Portfolio />}
-                  {openApp === "Contact" && <Contact />}
+                  {msState.openApp === "About" && <About />}
+                  {msState.openApp === "Portfolio" && <Portfolio />}
+                  {msState.openApp === "Contact" && <Contact />}
                 </div>
               </div>
             )}

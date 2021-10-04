@@ -1,20 +1,20 @@
 // ========== Tech Icons ========== //
 
-// import html from "../../images/html5.png";
-import nodejs from "../../../images/nodejs.png";
-import semantic from "../../../images/semantic-ui.png";
-import redis from "../../../images/Redis_Logo.svg";
-import mongo from "../../../images/mongodb-logo.png";
-import pluarisDash from "../../../images/pluaris-dashboard.png";
+// import html from "../../assets/images/html5.png";
+import nodejs from "../../../assets/images/nodejs.png";
+import semantic from "../../../assets/images/semantic-ui.png";
+import redis from "../../../assets/images/Redis_Logo.svg";
+import mongo from "../../../assets/images/mongodb-logo.png";
+import pluarisDash from "../../../assets/images/pluaris-dashboard.png";
 
 // ========== Portfolio Items ========== //
-import portfolioDesktopImage from "../../../images/portfolio_desktop.png";
-import gameOfLifeFlower from "../../../images/game-of-life.jpg";
-import groupOrg1 from "../../../images/group-org1.jpg";
-import groupOrg2 from "../../../images/group-org2.jpg";
-import groupOrg3 from "../../../images/group-org3.jpg";
-import groupOrg4 from "../../../images/group-org4.jpg";
-import groupOrg5 from "../../../images/group-org5.jpg";
+import portfolioDesktopImage from "../../../assets/images/portfolio_desktop.png";
+import gameOfLifeFlower from "../../../assets/images/game-of-life.jpg";
+import groupOrg1 from "../../../assets/images/group-org1.jpg";
+import groupOrg2 from "../../../assets/images/group-org2.jpg";
+import groupOrg3 from "../../../assets/images/group-org3.jpg";
+import groupOrg4 from "../../../assets/images/group-org4.jpg";
+import groupOrg5 from "../../../assets/images/group-org5.jpg";
 
 const tech = {
   html: {
