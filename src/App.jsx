@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import Microsoft from "./pages/Microsoft/Microsoft";
+import Apple from "./pages/Apple/Apple";
 import { OsThemeContext } from "./context/allcontexts";
 
 import "./index.scss";
@@ -9,8 +10,8 @@ function App() {
   return (
     <>
       {theme === "ms" && <Microsoft />}
-      {theme === "apple" && <div>APPLE</div>}
-      {theme === "Linux" && <div>GNU / Linux</div>}
+      {theme === "apple" && <Apple />}
+      {theme === "linux" && <div>GNU / Linux</div>}
     </>
   );
 }

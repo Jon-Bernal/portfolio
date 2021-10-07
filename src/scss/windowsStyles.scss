@@ -83,12 +83,12 @@ body {
   color: #222222;
 }
 
-button,
-label,
-input,
-textarea,
-select,
-option,
+.msBtn,
+.msLabel,
+.msInput,
+.msTextarea,
+.msSelect,
+.msOption,
 ul.tree-view,
 .window,
 .title-bar {
@@ -118,7 +118,7 @@ u {
   border-bottom: 0.5px solid #222222;
 }
 
-button {
+.msBtn {
   box-sizing: border-box;
   border: none;
   background: var(--surface);
@@ -138,33 +138,33 @@ button {
   box-shadow: var(--border-raised-outer), var(--border-raised-inner);
 }
 
-button:not(:disabled):active {
+.msBtn:not(:disabled):active {
   box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   padding: 2px 11px 0 13px;
 }
 
 @media (not(hover)) {
-  button:not(:disabled):hover {
+  .msBtn:not(:disabled):hover {
     box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
   }
 }
 
-button:focus {
+.msBtn:focus {
   outline: 1px dotted #000000;
   outline-offset: -4px;
 }
 
-button::-moz-focus-inner {
+.msBtn::-moz-focus-inner {
   border: 0;
 }
 
 :disabled,
-:disabled + label {
+:disabled + .msLabel {
   color: var(--button-shadow);
 }
 
-button:disabled,
-:disabled + label {
+.msBtn:disabled,
+:disabled + .msLabel {
   text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
@@ -205,22 +205,22 @@ button:disabled,
   display: flex;
 }
 
-.title-bar-controls button {
+.title-bar-controls .msBtn {
   padding: 0;
   display: block;
   min-width: 16px;
   min-height: 14px;
 }
 
-.title-bar-controls button:active {
+.title-bar-controls .msBtn:active {
   padding: 0;
 }
 
-.title-bar-controls button:focus {
+.title-bar-controls .msBtn:focus {
   outline: none;
 }
 
-.title-bar-controls button[aria-label="Minimize"] {
+.title-bar-controls .msBtn[aria-label="Minimize"] {
   background-image: svg-load("./icon/minimize.svg");
   background-repeat: no-repeat;
   background-position: bottom 3px left 4px;
@@ -229,7 +229,7 @@ button:disabled,
   width: 18px;
 }
 
-.title-bar-controls button[aria-label="Maximize"] {
+.title-bar-controls .msBtn[aria-label="Maximize"] {
   background-image: svg-load("./icon/maximize.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
@@ -238,7 +238,7 @@ button:disabled,
   width: 18px;
 }
 
-.title-bar-controls button[aria-label="Restore"] {
+.title-bar-controls .msBtn[aria-label="Restore"] {
   background-image: svg-load("./icon/restore.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
@@ -247,7 +247,7 @@ button:disabled,
   width: 18px;
 }
 
-.title-bar-controls button[aria-label="Help"] {
+.title-bar-controls .msBtn[aria-label="Help"] {
   background-image: svg-load("./icon/help.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 5px;
@@ -256,7 +256,7 @@ button:disabled,
   width: 18px;
 }
 
-.title-bar-controls button[aria-label="Close"] {
+.title-bar-controls .msBtn[aria-label="Close"] {
   margin-left: 2px;
   // background-image: svg-load("./icon/close.svg");
   background-image: url("./icon/close.svg");
@@ -320,13 +320,13 @@ legend {
   margin-top: var(--grouped-element-spacing);
 }
 
-label {
+.msLabel {
   display: inline-flex;
   align-items: center;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+.msInput[type="radio"],
+.msInput[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -337,17 +337,17 @@ input[type="checkbox"] {
   border: none;
 }
 
-input[type="radio"] + label,
-input[type="checkbox"] + label {
+.msInput[type="radio"] + .msLabel,
+.msInput[type="checkbox"] + .msLabel {
   line-height: 13px;
 }
 
-input[type="radio"] + label {
+.msInput[type="radio"] + .msLabel {
   position: relative;
   margin-left: var(--radio-total-width);
 }
 
-input[type="radio"] + label::before {
+.msInput[type="radio"] + .msLabel::before {
   content: "";
   position: absolute;
   top: 0;
@@ -359,11 +359,11 @@ input[type="radio"] + label::before {
   background: svg-load("./icon/radio-border.svg");
 }
 
-input[type="radio"]:active + label::before {
+.msInput[type="radio"]:active + .msLabel::before {
   background: svg-load("./icon/radio-border-disabled.svg");
 }
 
-input[type="radio"]:checked + label::after {
+.msInput[type="radio"]:checked + .msLabel::after {
   content: "";
   display: block;
   width: var(--radio-dot-width);
@@ -374,25 +374,25 @@ input[type="radio"]:checked + label::after {
   background: svg-load("./icon/radio-dot.svg");
 }
 
-input[type="radio"]:focus + label,
-input[type="checkbox"]:focus + label {
+.msInput[type="radio"]:focus + .msLabel,
+.msInput[type="checkbox"]:focus + .msLabel {
   outline: 1px dotted #000000;
 }
 
-input[type="radio"][disabled] + label::before {
+.msInput[type="radio"][disabled] + .msLabel::before {
   background: svg-load("./icon/radio-border-disabled.svg");
 }
 
-input[type="radio"][disabled]:checked + label::after {
+.msInput[type="radio"][disabled]:checked + .msLabel::after {
   background: svg-load("./icon/radio-dot-disabled.svg");
 }
 
-input[type="checkbox"] + label {
+.msInput[type="checkbox"] + .msLabel {
   position: relative;
   margin-left: var(--checkbox-total-width);
 }
 
-input[type="checkbox"] + label::before {
+.msInput[type="checkbox"] + .msLabel::before {
   content: "";
   position: absolute;
   left: calc(-1 * (var(--checkbox-total-width-precalc)));
@@ -404,11 +404,11 @@ input[type="checkbox"] + label::before {
   margin-right: var(--radio-label-spacing);
 }
 
-input[type="checkbox"]:active + label::before {
+.msInput[type="checkbox"]:active + .msLabel::before {
   background: var(--surface);
 }
 
-input[type="checkbox"]:checked + label::after {
+.msInput[type="checkbox"]:checked + .msLabel::after {
   content: "";
   display: block;
   width: var(--checkmark-width);
@@ -421,19 +421,19 @@ input[type="checkbox"]:checked + label::after {
   background: svg-load("./icon/checkmark.svg");
 }
 
-input[type="checkbox"][disabled] + label::before {
+.msInput[type="checkbox"][disabled] + .msLabel::before {
   background: var(--surface);
 }
 
-input[type="checkbox"][disabled]:checked + label::after {
+.msInput[type="checkbox"][disabled]:checked + .msLabel::after {
   background: svg-load("./icon/checkmark-disabled.svg");
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select,
-textarea {
+.msInput[type="text"],
+.msInput[type="password"],
+.msInput[type="email"],
+.msSelect,
+.msTextarea {
   padding: 3px 4px;
   border: none;
   box-shadow: var(--border-field);
@@ -445,28 +445,28 @@ textarea {
   border-radius: 0;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-select {
+.msInput[type="text"],
+.msInput[type="password"],
+.msInput[type="email"],
+.msSelect {
   height: 21px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+.msInput[type="text"],
+.msInput[type="password"],
+.msInput[type="email"] {
   // /* For some reason descenders are getting cut off without this */
   line-height: 2;
 }
 
-input[type="email"]:disabled,
-input[type="password"]:disabled,
-input[type="text"]:disabled,
-textarea:disabled {
+.msInput[type="email"]:disabled,
+.msInput[type="password"]:disabled,
+.msInput[type="text"]:disabled,
+.msTextarea:disabled {
   background-color: var(--surface);
 }
 
-select {
+.msSelect {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -478,25 +478,25 @@ select {
   border-radius: 0;
 }
 
-select:focus,
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-textarea:focus {
+.msSelect:focus,
+.msInput[type="text"]:focus,
+.msInput[type="password"]:focus,
+.msInput[type="email"]:focus,
+.msTextarea:focus {
   outline: none;
 }
 
-input[type="range"] {
+.msInput[type="range"] {
   -webkit-appearance: none;
   width: 100%;
   background: transparent;
 }
 
-input[type="range"]:focus {
+.msInput[type="range"]:focus {
   outline: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
+.msInput[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 21px;
   width: 11px;
@@ -504,12 +504,12 @@ input[type="range"]::-webkit-slider-thumb {
   transform: translateY(-8px);
 }
 
-input[type="range"].has-box-indicator::-webkit-slider-thumb {
+.msInput[type="range"].has-box-indicator::-webkit-slider-thumb {
   background: svg-load("./icon/indicator-rectangle-horizontal.svg");
   transform: translateY(-10px);
 }
 
-input[type="range"]::-moz-range-thumb {
+.msInput[type="range"]::-moz-range-thumb {
   height: 21px;
   width: 11px;
   border: 0;
@@ -518,12 +518,12 @@ input[type="range"]::-moz-range-thumb {
   transform: translateY(2px);
 }
 
-input[type="range"].has-box-indicator::-moz-range-thumb {
+.msInput[type="range"].has-box-indicator::-moz-range-thumb {
   background: svg-load("./icon/indicator-rectangle-horizontal.svg");
   transform: translateY(0px);
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+.msInput[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
@@ -534,7 +534,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     -1px -1px 0 darkgrey, 0 -1px 0 darkgrey, -1px 1px 0 white, 1px -1px darkgrey;
 }
 
-input[type="range"]::-moz-range-track {
+.msInput[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
   box-sizing: border-box;
@@ -552,7 +552,7 @@ input[type="range"]::-moz-range-track {
   transform: translateY(50%);
 }
 
-.is-vertical > input[type="range"] {
+.is-vertical > .msInput[type="range"] {
   width: 150px;
   height: 4px;
   margin: 0 calc(var(--grouped-element-spacing) + var(--range-spacing)) 0
@@ -561,7 +561,7 @@ input[type="range"]::-moz-range-track {
   transform: rotate(270deg) translateX(calc(-50% + var(--element-spacing)));
 }
 
-.is-vertical > input[type="range"]::-webkit-slider-runnable-track {
+.is-vertical > .msInput[type="range"]::-webkit-slider-runnable-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
@@ -569,7 +569,7 @@ input[type="range"]::-moz-range-track {
     1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
 }
 
-.is-vertical > input[type="range"]::-moz-range-track {
+.is-vertical > .msInput[type="range"]::-moz-range-track {
   border-left: 1px solid grey;
   border-right: 0;
   border-bottom: 1px solid grey;
@@ -577,40 +577,41 @@ input[type="range"]::-moz-range-track {
     1px -1px 0 darkgrey, 0 -1px 0 darkgrey, 1px 1px 0 white, -1px -1px darkgrey;
 }
 
-.is-vertical > input[type="range"]::-webkit-slider-thumb {
+.is-vertical > .msInput[type="range"]::-webkit-slider-thumb {
   transform: translateY(-8px) scaleX(-1);
 }
 
-.is-vertical > input[type="range"].has-box-indicator::-webkit-slider-thumb {
+.is-vertical > .msInput[type="range"].has-box-indicator::-webkit-slider-thumb {
   transform: translateY(-10px) scaleX(-1);
 }
 
-.is-vertical > input[type="range"]::-moz-range-thumb {
+.is-vertical > .msInput[type="range"]::-moz-range-thumb {
   transform: translateY(2px) scaleX(-1);
 }
 
-.is-vertical > input[type="range"].has-box-indicator::-moz-range-thumb {
+.is-vertical > .msInput[type="range"].has-box-indicator::-moz-range-thumb {
   transform: translateY(0px) scaleX(-1);
 }
 
-select:focus {
+.msSelect:focus {
   color: var(--button-highlight);
   background-color: var(--dialog-blue);
 }
-select:focus option {
+.msSelect:focus .msOption {
   color: #000;
   background-color: #fff;
 }
 
-select:active {
+.msSelect:active {
   background-image: svg-load("./icon/button-down-active.svg");
 }
 
-a {
+.msA {
   color: var(--link-blue);
+  font-weight: bold;
 }
 
-a:focus {
+.msA:focus {
   outline: 1px dotted var(--link-blue);
 }
 

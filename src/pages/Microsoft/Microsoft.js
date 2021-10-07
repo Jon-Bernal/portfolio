@@ -51,18 +51,18 @@ const Microsoft = () => {
             <div className={styles.iconGroup}>
               <button
                 onClick={() =>
-                  msDispatch({ type: "change open app", app: "About" })
+                  msDispatch({ type: "change open app", name: "About" })
                 }
-                className={styles.iconBtn}
+                className={`msBtn ${styles.iconBtn}`}
               >
                 <Person className={styles.icon} />
                 About Me
               </button>
               <button
                 onClick={() =>
-                  msDispatch({ type: "change open app", app: "Portfolio" })
+                  msDispatch({ type: "change open app", name: "Portfolio" })
                 }
-                className={styles.iconBtn}
+                className={`msBtn ${styles.iconBtn}`}
               >
                 <History className={styles.icon} />
                 Portfolio
@@ -96,6 +96,7 @@ const Microsoft = () => {
                   <div className={`title-bar-text`}>{msState?.openApp}</div>
                   <div className={`title-bar-controls`}>
                     <button
+                      className="msBtn"
                       aria-label="Close"
                       onClick={() =>
                         msDispatch({ type: "change open app", app: "" })

@@ -6,7 +6,7 @@ import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 // ----------- New Icons ----------- //
 import WindowsLogo from "../../../assets/svg/WindowsLogo";
 import DropRightArrow from "../../../assets/svg/DropRightArrow";
-import Pear from "../../../assets/svg/Pear";
+import AppleLogo from "../../../assets/svg/AppleLogo";
 import Tux from "../../../assets/svg/Tux";
 import Person from "../../../assets/svg/Person";
 import History from "../../../assets/svg/History";
@@ -14,13 +14,14 @@ import ChangeOsIcon from "../../../assets/svg/ChangeOsIcon";
 import LayoutWithText from "../../../assets/svg/LayoutWithText";
 
 // ----------- Data ----------- //
-import { MsContext } from "../../../context/allcontexts";
+import { MsContext, OsThemeContext } from "../../../context/allcontexts";
 
 // ----------- Styling ----------- //
 import styles from "./OsMenu.module.scss";
 
 const OsMenu = () => {
   const { msState, msDispatch } = useContext(MsContext);
+  const { setTheme } = useContext(OsThemeContext);
   const { showOsMenu } = msState;
   const [clock, setClock] = useState(new Date().toLocaleTimeString());
 
@@ -33,11 +34,11 @@ const OsMenu = () => {
   return (
     <div
       className={styles.container}
-      onMouseLeave={() => msDispatch({ type: "set os menu", isOpen: false })}
+      // onMouseLeave={() => msDispatch({ type: "set os menu", isOpen: false })}
     >
       {/* ---------- Start Menu Button ---------- */}
       <button
-        className={styles.osMenuBtn}
+        className={`${styles.osMenuBtn}`}
         onClick={() =>
           msDispatch({
             type: "set os menu",
@@ -51,11 +52,12 @@ const OsMenu = () => {
       {/* ---------- Start Menu ---------- */}
       <div className={styles.menu} data-open={`${showOsMenu}`}>
         <div className={styles.osNameLabel}>
-          <span className={styles.osNameBold}>Casement</span>95
+          <span className={styles.osNameBold}>Windows</span>95
         </div>
         <div className={styles.appSectionList}>
           <div className={styles.subMenuTarget}>
             <button
+              className={"msBtn"}
               onClick={() =>
                 msDispatch({
                   type: "open os submenu",
@@ -77,6 +79,7 @@ const OsMenu = () => {
             {msState.osSubMenu === "apps" && (
               <div className={styles.subMenu}>
                 <button
+                  className={"msBtn"}
                   onClick={() =>
                     msDispatch({ type: "change open app", name: "About" })
                   }
@@ -85,6 +88,7 @@ const OsMenu = () => {
                   About Me
                 </button>
                 <button
+                  className={"msBtn"}
                   onClick={() =>
                     msDispatch({ type: "change open app", name: "Portfolio" })
                   }
@@ -97,6 +101,7 @@ const OsMenu = () => {
           </div>
           <div className={styles.subMenuTarget}>
             <button
+              className={"msBtn"}
               onMouseEnter={() =>
                 msDispatch({
                   type: "open os submenu",
@@ -117,13 +122,17 @@ const OsMenu = () => {
 
             {msState.osSubMenu === "theme" && (
               <div className={styles.subMenu}>
-                <button onClick={() => console.log("show apple theme")}>
-                  <Pear className={styles.subMenuLogo} />
-                  Pear
+                <button className={"msBtn"} onClick={() => setTheme("apple")}>
+                  <AppleLogo className={styles.subMenuLogo} />
+                  Apple
                 </button>
-                <button onClick={() => console.log("show linux theme")}>
+                <button
+                  className={"msBtn"}
+                  onClick={() => console.log("show linux theme")}
+                >
                   <Tux className={styles.subMenuLogo} />
-                  GNU/Linux
+                  {/* GNU/Linux */}
+                  Coming Soon...
                 </button>
               </div>
             )}

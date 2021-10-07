@@ -32,6 +32,7 @@ const PortfolioPiece = ({ name, back }) => {
       </div>
       <div className={styles.navBtns}>
         <button
+          className={`msBtn`}
           onClick={() => {
             setShow("images");
           }}
@@ -39,6 +40,7 @@ const PortfolioPiece = ({ name, back }) => {
           Screenshots
         </button>
         <button
+          className={`msBtn`}
           onClick={() => {
             setShow("description");
           }}
@@ -46,6 +48,7 @@ const PortfolioPiece = ({ name, back }) => {
           Purpose
         </button>
         <button
+          className={`msBtn`}
           onClick={() => {
             setShow("Frontend");
           }}
@@ -53,6 +56,7 @@ const PortfolioPiece = ({ name, back }) => {
           Frontend
         </button>
         <button
+          className={`msBtn`}
           onClick={() => {
             setShow("Backend");
           }}
@@ -60,6 +64,7 @@ const PortfolioPiece = ({ name, back }) => {
           Backend
         </button>
         <button
+          className={`msBtn`}
           onClick={() => {
             setShow("Infastructure");
           }}
@@ -67,6 +72,7 @@ const PortfolioPiece = ({ name, back }) => {
           Infastructure
         </button>
         <a
+          className={`msA`}
           href={data.link}
           target="_blank"
           rel="noreferrer"
@@ -78,10 +84,15 @@ const PortfolioPiece = ({ name, back }) => {
       <div className={styles.imgControls}>
         {show === "images" && (
           <>
-            <button disabled={idx === 0} onClick={() => setIdx(idx - 1)}>
+            <button
+              className={`msBtn`}
+              disabled={idx === 0}
+              onClick={() => setIdx(idx - 1)}
+            >
               Prev
             </button>
             <button
+              className={`msBtn`}
               disabled={idx === data.images.length - 1}
               onClick={() => setIdx(idx + 1)}
             >
@@ -91,7 +102,9 @@ const PortfolioPiece = ({ name, back }) => {
         )}
       </div>
       <div className={styles.back}>
-        <button onClick={back}>back</button>
+        <button className={`msBtn`} onClick={back}>
+          back
+        </button>
       </div>
     </div>
   );

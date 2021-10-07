@@ -1,0 +1,302 @@
+.removeWindowsStylesBase .container {
+  button {
+    background: unset;
+    box-shadow: unset;
+    border-radius: unset;
+    font-size: unset;
+    margin-left: unset;
+    min-width: unset;
+    min-height: unset;
+    padding: unset;
+    &:not(:disabled):active {
+      box-shadow: unset;
+      padding: unset;
+    }
+    &:focus {
+      outline: unset;
+      outline-offset: unset;
+    }
+    &:disabled,
+    &:disabled + label {
+      color: unset;
+      text-shadow: unset;
+    }
+  }
+  input[type="radio"] + label {
+    position: static;
+    margin-left: unset;
+  }
+  input[type="radio"] + label::before {
+    content: unset;
+    position: unset;
+    top: unset;
+    left: unset;
+    display: unset;
+    width: unset;
+    height: unset;
+    margin-right: unset;
+    background: unset;
+  }
+  input[type="radio"]:active + label::before {
+    background: unset;
+  }
+  input[type="radio"]:checked + label::after {
+    content: unset;
+    display: unset;
+    width: unset;
+    height: unset;
+    top: unset;
+    left: unset;
+    position: unset;
+    background: unset;
+  }
+
+  input[type="radio"]:focus + label,
+  input[type="checkbox"]:focus + label {
+    outline: unset;
+  }
+
+  input[type="radio"][disabled] + label::before {
+    background: unset;
+  }
+
+  input[type="radio"][disabled]:checked + label::after {
+    background: unset;
+  }
+
+  input[type="checkbox"] + label {
+    position: unset;
+    margin-left: unset;
+  }
+
+  input[type="checkbox"] + label::before {
+    content: unset;
+    position: unset;
+    left: unset;
+    display: unset;
+    width: unset;
+    height: unset;
+    background: unset;
+    box-shadow: unset;
+    margin-right: unset;
+  }
+
+  input[type="checkbox"]:active + label::before {
+    background: unset;
+  }
+
+  input[type="checkbox"]:checked + label::after {
+    content: unset;
+    display: unset;
+    width: unset;
+    height: unset;
+    position: unset;
+    top: unset;
+    left: unset;
+    background: unset;
+  }
+
+  input[type="checkbox"][disabled] + label::before {
+    background: unset;
+  }
+
+  input[type="checkbox"][disabled]:checked + label::after {
+    background: unset;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select,
+  textarea {
+    padding: unset;
+    border: none;
+    box-shadow: unset;
+    background-color: unset;
+    box-sizing: border-box;
+    -webkit-appearance: unset;
+    -moz-appearance: unset;
+    appearance: unset;
+    border-radius: unset;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select {
+    height: unset;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    // /* For some reason descenders are getting cut off without this */
+    line-height: unset;
+  }
+
+  input[type="email"]:disabled,
+  input[type="password"]:disabled,
+  input[type="text"]:disabled,
+  textarea:disabled {
+    background-color: unset;
+  }
+
+  select {
+    appearance: unset;
+    -webkit-appearance: unset;
+    -moz-appearance: unset;
+    position: unset;
+    padding-right: unset;
+    background-image: unset;
+    background-position: unset;
+    background-repeat: unset;
+    border-radius: unset;
+  }
+
+  select:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: unset;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: unset;
+    width: unset;
+    background: unset;
+  }
+
+  input[type="range"]:focus {
+    outline: unset;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: unset;
+    height: unset;
+    width: unset;
+    background: unset;
+    transform: unset;
+  }
+
+  input[type="range"].has-box-indicator::-webkit-slider-thumb {
+    background: unset;
+    transform: unset;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    height: unset;
+    width: unset;
+    border: unset;
+    border-radius: unset;
+    background: unset;
+    transform: unset;
+  }
+
+  input[type="range"].has-box-indicator::-moz-range-thumb {
+    background: unset;
+    transform: unset;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: unset;
+    height: unset;
+    box-sizing: unset;
+    background: unset;
+    border-right: unset;
+    border-bottom: unset;
+    box-shadow: unset;
+  }
+
+  input[type="range"]::-moz-range-track {
+    width: unset;
+    height: unset;
+    box-sizing: unset;
+    background: unset;
+    border-right: unset;
+    border-bottom: unset;
+    box-shadow: unset;
+  }
+
+  select:focus {
+    color: unset;
+    background-color: unset;
+  }
+  select:focus option {
+    color: unset;
+    background-color: unset;
+  }
+
+  select:active {
+    background-image: unset;
+  }
+
+  a {
+    color: unset;
+  }
+
+  a:focus {
+    outline: unset;
+  }
+
+  pre {
+    display: unset;
+    background: unset;
+    box-shadow: unset;
+    padding: unset;
+    margin: unset;
+  }
+
+  code,
+  code * {
+    font-family: unset;
+  }
+
+  summary:focus {
+    outline: unset;
+  }
+
+  ::-webkit-scrollbar {
+    width: unset;
+  }
+  ::-webkit-scrollbar:horizontal {
+    height: unset;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: unset;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-image: unset;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: unset;
+    box-shadow: unset;
+  }
+
+  ::-webkit-scrollbar-button:horizontal:start:decrement,
+  ::-webkit-scrollbar-button:horizontal:end:increment,
+  ::-webkit-scrollbar-button:vertical:start:decrement,
+  ::-webkit-scrollbar-button:vertical:end:increment {
+    display: unset;
+  }
+
+  ::-webkit-scrollbar-button:vertical:start {
+    height: unset;
+    background-image: unset;
+  }
+  ::-webkit-scrollbar-button:vertical:end {
+    height: unset;
+    background-image: svg-load("./icon/button-down.svg") unset;
+  }
+  ::-webkit-scrollbar-button:horizontal:start {
+    width: unset;
+    background-image: unset;
+  }
+  ::-webkit-scrollbar-button:horizontal:end {
+    width: unset;
+    background-image: unset;
+  }
+}
