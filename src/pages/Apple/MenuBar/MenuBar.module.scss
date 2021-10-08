@@ -1,6 +1,8 @@
+// background purple #3301a2
+// background blue #01b9df
+
 .container {
   --menuHeight: 30px;
-  --textColor: white;
   --activeTextColor: white;
   --activeBackground: blue;
   --spacing: 20px;
@@ -13,29 +15,38 @@
     mix(#3301a288, #01b9df88, 45%),
     mix(#3301a288, #01b9df88, 15%)
   );
-  box-shadow: 0px 0px 5px #333;
+  // box-shadow: 0px 0px 2px #333;
   padding: 0 var(--spacing);
   color: white;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  .logoBtn {
-    height: var(--menuHeight);
-    width: var(--menuHeight);
-    padding: 6px;
-    margin: 0px var(--spacing) 0 0;
-    height: 100%;
-    background: none;
-    border: none;
-    color: var(--textColor);
-    &:hover {
-      background: var(--activeBackground);
-      color: var(--activeTextColor);
+  .appleMenuContainer {
+    position: relative;
+    .logoBtn {
+      height: var(--menuHeight);
+      width: var(--menuHeight);
+      padding: 6px;
+      margin: 0px var(--spacing) 0 0;
+      height: 100%;
+      background: none;
+      border: none;
+      color: white;
+      &:hover {
+        background: var(--activeBackground);
+        color: var(--activeTextColor);
+      }
+      &[data-open="true"] {
+        background: var(--activeTextColor);
+        color: var(--activeBackground);
+      }
     }
-    &[data-open="true"] {
-      background: var(--activeTextColor);
-      color: var(--activeBackground);
+    .appleMenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
     }
   }
   .clock {
@@ -43,6 +54,3 @@
     padding-right: 6px;
   }
 }
-
-// #3301a2 // purple
-// #01b9df // blue

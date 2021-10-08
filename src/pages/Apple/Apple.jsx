@@ -1,32 +1,48 @@
-import { useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 
-import { Portfolio } from "../Microsoft/Portfolio/Portfolio";
 import MenuBar from "./MenuBar/MenuBar";
-import { About } from "../Microsoft/About/About";
+import Dock from "./Dock/Dock";
+import AppWindow from "./AppWindow/AppWindow";
+import { AppleContext } from "../../context/allcontexts";
 
-import otherStyles from "../../scss/removeWindowsStyles.scss";
 import styles from "./Apple.module.scss";
 
-// function removeCssFile(name) {
-//   document.querySelector('style,link')
-// }
-
 const Apple = () => {
-  // useEffect(() => {
-  //   removeCssFile("windowsStyles.scss");
-  // }, []);
+  const { appleState, appleDispatch } = useContext(AppleContext);
+
+  const [difference, setDifference] = useState({ x: 0, y: 0 });
+  const [canDrag, setCanDrag] = useState(false);
+
   return (
-    <div className={`${styles.removeWindowsStylesBase} ${styles.container}`}>
+    <div
+      className={`${styles.removeWindowsStylesBase} ${styles.container}`}
+      onMouseMove={(e) => {
+        if (canDrag) {
+          const appWindow = document.querySelector("#draggable");
+          const left = e.clientX - difference.x;
+          const top = e.clientY - difference.y;
+          appWindow.style.left = left + "px";
+          appWindow.style.top = top > 0 ? top + "px" : "0px";
+        }
+      }}
+      onMouseUp={(e) => {
+        setCanDrag(false);
+      }}
+    >
       {/* Menu Bar */}
       <MenuBar />
       <div className={styles.desktop}>
         {/* Desktop */}
-        <div>
-          {/* <Portfolio /> */}
-          {/* <About /> */}
-        </div>
+        {appleState.openApp && (
+          <AppWindow
+            difference={difference}
+            setDifference={setDifference}
+            canDrag={canDrag}
+            setCanDrag={setCanDrag}
+          />
+        )}
         {/* Dock */}
-        <div className={styles.dock}></div>
+        <Dock />
       </div>
     </div>
   );
