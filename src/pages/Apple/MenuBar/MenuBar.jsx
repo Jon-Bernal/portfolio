@@ -1,5 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import AppleLogo from "../../../assets/svg/AppleLogo";
+import Githubicon from "../../../assets/svg/GithubIcon";
+import LinkedinIcon from "../../../assets/svg/LinkedInIcon";
 
 import { OsThemeContext, AppleContext } from "../../../context/allcontexts";
 
@@ -21,7 +23,7 @@ const Menubar = () => {
   }, [clock]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="appleOsTopMenu">
       <div
         className={styles.appleMenuContainer}
         onMouseLeave={() =>
@@ -43,13 +45,44 @@ const Menubar = () => {
 
         {/* OS Menu */}
         {appleState?.showOsMenu && (
-          <div className={styles.appleMenu}>
+          // <div className={styles.appleMenu}>
+          <div className={styles.dropdownMenu}>
             <button onClick={() => setTheme("ms")}>Microsoft</button>
           </div>
         )}
       </div>
+      {appleState.openApp && (
+        <button
+          className={styles.menuText}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("clicked dropdown");
+          }}
+        >
+          {appleState.openApp}
+        </button>
+      )}
       {/* Clock */}
-      <div className={styles.clock}>{clock}</div>
+      <div className={styles.right}>
+        <a
+          href="https://github.com/Jon-Bernal"
+          target="_blank"
+          rel="noreferrer noopener"
+          className={styles.github}
+        >
+          <Githubicon className={styles.githubIcon} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jon-bernal/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className={styles.linkedin}
+        >
+          <LinkedinIcon className={styles.linkedinIcon} />
+        </a>
+        <div className={styles.clock}>{clock}</div>
+      </div>
     </div>
   );
 };

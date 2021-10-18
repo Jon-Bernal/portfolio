@@ -11,9 +11,12 @@
   border-radius: 20px;
 }
 
+.container ul {
+  display: flex;
+}
 .container li {
   list-style-type: none;
-  display: inline-block;
+  // display: inline-block;
   position: relative;
   margin: 0 10px;
 }
@@ -23,7 +26,7 @@
   border: none;
 }
 
-.container li .dockItem {
+.dockItem {
   width: 64px;
   height: 64px;
   -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, 0.5)));
@@ -37,8 +40,8 @@
 }
 
 .container li:hover + li .dockItem,
-.container li.prev .dockItem {
-  -webkit-transform: scale(1.5);
+.container li .prev {
+  transform: scale(1.5);
   margin: 0 1.5em;
 }
 

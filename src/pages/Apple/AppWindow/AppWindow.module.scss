@@ -1,0 +1,58 @@
+.appWindow {
+  background: #fff;
+  border-radius: 12px;
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--appShadow);
+
+  // temporary
+  min-width: 100px;
+  min-height: 100px;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  .header {
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+  }
+
+  .closeBtn {
+    border-radius: 50px;
+    height: 14px;
+    width: 14px;
+    color: #ff605a;
+    background: #ff605a;
+    border: none;
+    box-shadow: 0 0 1px #555, inset 0 0 3px #666;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin: 0;
+    // padding: 0;
+    margin-left: 30px;
+    padding-top: 2px;
+    padding-top: 3px;
+    font-size: 10px;
+    padding-left: 5px;
+    font-weight: bold;
+
+    &:hover {
+      color: #555;
+    }
+  }
+
+  .appContent {
+    max-height: calc(100vh - var(--osMenuHeight) - (var(--dockHeight) * 1.1));
+    max-width: 100%;
+    overflow: auto;
+  }
+}

@@ -18,7 +18,7 @@ const Apple = () => {
       className={`${styles.removeWindowsStylesBase} ${styles.container}`}
       onMouseMove={(e) => {
         if (canDrag) {
-          const appWindow = document.querySelector("#draggable");
+          const appWindow = document.querySelector("#appleDraggable");
           const left = e.clientX - difference.x;
           const top = e.clientY - difference.y;
           appWindow.style.left = left + "px";
@@ -33,14 +33,16 @@ const Apple = () => {
       <MenuBar />
       <div className={styles.desktop}>
         {/* Desktop */}
-        {appleState.openApp && (
-          <AppWindow
-            difference={difference}
-            setDifference={setDifference}
-            canDrag={canDrag}
-            setCanDrag={setCanDrag}
-          />
-        )}
+        <div className={styles.AppWindowContainer}>
+          {appleState.openApp && (
+            <AppWindow
+              difference={difference}
+              setDifference={setDifference}
+              canDrag={canDrag}
+              setCanDrag={setCanDrag}
+            />
+          )}
+        </div>
         {/* Dock */}
         <Dock />
       </div>

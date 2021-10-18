@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-
-// ----------- Old Icons ----------- //
-import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
+import { useState, useEffect, useContext } from "react";
 
 // ----------- New Icons ----------- //
 import WindowsLogo from "../../../assets/svg/WindowsLogo";
@@ -12,6 +9,8 @@ import Person from "../../../assets/svg/Person";
 import History from "../../../assets/svg/History";
 import ChangeOsIcon from "../../../assets/svg/ChangeOsIcon";
 import LayoutWithText from "../../../assets/svg/LayoutWithText";
+import Githubicon from "../../../assets/svg/GithubIcon";
+import Linkedinicon from "../../../assets/svg/LinkedInIcon";
 
 // ----------- Data ----------- //
 import { MsContext, OsThemeContext } from "../../../context/allcontexts";
@@ -151,7 +150,7 @@ const OsMenu = () => {
           rel="noreferrer noopener"
           className={styles.trayIcon}
         >
-          <IoLogoGithub className={styles.trayIcon} />
+          <Githubicon className={styles.trayIcon} />
         </a>
         <a
           href="https://www.linkedin.com/in/jon-bernal/"
@@ -159,7 +158,7 @@ const OsMenu = () => {
           rel="noreferrer noopener"
           className={styles.trayIcon}
         >
-          <IoLogoLinkedin className={styles.trayIcon} />
+          <Linkedinicon className={styles.trayIcon} />
         </a>
         <p className={styles.clock}>{clock}</p>
       </div>

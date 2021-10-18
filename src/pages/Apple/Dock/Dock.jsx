@@ -1,26 +1,18 @@
-import { useContext } from "react";
-import History from "../../../assets/svg/History";
-import Person from "../../../assets/svg/Person";
+import { useContext, useState } from "react";
+import Bluefoldericon from "../../../assets/svg/BlueFolderIcon";
+import AppleAboutMeIcon from "../../../assets/svg/AppleAboutMeIcon";
 import { AppleContext } from "../../../context/allcontexts";
 
 import styles from "./Dock.module.scss";
 
 const Dock = () => {
   const { appleDispatch } = useContext(AppleContext);
+
+  const [hovered, setHovered] = useState("");
   return (
     <div className={styles.container}>
       <div id={styles.dock}>
         <ul>
-          <li>
-            <span>About</span>
-            <button
-              onClick={() => {
-                appleDispatch({ type: "change open app", name: "about" });
-              }}
-            >
-              <History className={styles.dockItem} />
-            </button>
-          </li>
           <li>
             <span>Portfolio</span>
             <button
@@ -28,7 +20,23 @@ const Dock = () => {
                 appleDispatch({ type: "change open app", name: "portfolio" });
               }}
             >
-              <Person className={styles.dockItem} />
+              <Bluefoldericon
+                className={`${styles.dockItem} ${
+                  hovered === "portfolio" ? styles.prev : ""
+                }`}
+              />
+            </button>
+          </li>
+          <li>
+            <span>About</span>
+            <button
+              onClick={() => {
+                appleDispatch({ type: "change open app", name: "about" });
+              }}
+              onMouseEnter={() => setHovered("portfolio")}
+              onMouseLeave={() => setHovered("")}
+            >
+              <AppleAboutMeIcon className={styles.dockItem} />
             </button>
           </li>
         </ul>

@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { Portfolio } from "./Portfolio/Portfolio";
-import { Contact } from "./Contact";
 import OsMenu from "./OsMenu/OsMenu";
 import { About } from "./About/About";
 import { OsThemeContext, MsContext } from "../../context/allcontexts";
@@ -113,7 +112,6 @@ const Microsoft = () => {
                 >
                   {msState.openApp === "About" && <About />}
                   {msState.openApp === "Portfolio" && <Portfolio />}
-                  {msState.openApp === "Contact" && <Contact />}
                 </div>
               </div>
             )}
