@@ -4,7 +4,7 @@
 .container {
   --menuHeight: 30px;
   --activeTextColor: white;
-  --activeBackground: blue;
+  --activeBackground: #3772e6;
   --spacing: 20px;
 
   width: 100%;
@@ -26,6 +26,7 @@
 
 .appleMenuContainer {
   position: relative;
+  z-index: 1;
 }
 
 .logoBtn {
@@ -62,10 +63,34 @@
 }
 
 .dropdownMenu {
+  display: flex;
+  flex-direction: column;
+
   position: absolute;
   top: 100%;
   left: 0;
   background: white;
+  box-shadow: var(--smallShadow);
+  background: linear-gradient(
+    to bottom,
+    mix(lighten(#4000b955, 30%), lighten(#8301d555, 30%), 90%),
+    mix(lighten(#4000b955, 30%), lighten(#8301d555, 30%), 30%)
+  );
+  min-width: 200px;
+  border-radius: 6px;
+  padding: 6px;
+  button {
+    filter: blur(0px);
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: left;
+    border-radius: 4px;
+    &:hover {
+      background: var(--activeBackground);
+    }
+  }
 }
 
 .right {

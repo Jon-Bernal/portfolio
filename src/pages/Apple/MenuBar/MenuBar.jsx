@@ -45,9 +45,28 @@ const Menubar = () => {
 
         {/* OS Menu */}
         {appleState?.showOsMenu && (
-          // <div className={styles.appleMenu}>
           <div className={styles.dropdownMenu}>
-            <button onClick={() => setTheme("ms")}>Microsoft</button>
+            <button
+              onClick={() => {
+                setTheme("ms");
+              }}
+            >
+              Microsoft
+            </button>
+            <button
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              Restart
+            </button>
+            <button
+              onClick={() => {
+                window.close();
+              }}
+            >
+              Shut Down
+            </button>
           </div>
         )}
       </div>

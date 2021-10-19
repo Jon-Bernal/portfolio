@@ -6,7 +6,7 @@ const History = (props) => {
       {...props}
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 24 24"
       height="100%"
       width="100%"
