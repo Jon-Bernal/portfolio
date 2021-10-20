@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import styles from "./AppWindow.module.scss";
-import About from "../About/About";
+import About from "./About/About";
 import { AppleContext } from "../../../context/allcontexts";
+import Portfolio from "./Portfolio/Portfolio";
 
 const AboutWindow = ({ difference, setDifference, canDrag, setCanDrag }) => {
   const { appleState, appleDispatch } = useContext(AppleContext);
@@ -54,9 +55,7 @@ const AboutWindow = ({ difference, setDifference, canDrag, setCanDrag }) => {
         }}
       >
         {appleState.openApp === "about" && <About />}
-        {/* {msState.openApp === "Portfolio" && <Portfolio />} */}
-        {/* {msState.openApp === "Contact" && <Contact />} */}
-        {/* END Old Stuff Here */}
+        {appleState.openApp === "portfolio" && <Portfolio />}
       </div>
     </div>
   );

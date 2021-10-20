@@ -49,6 +49,7 @@ const Menubar = () => {
             <button
               onClick={() => {
                 setTheme("ms");
+                appleDispatch({ type: "reset" });
               }}
             >
               Microsoft
@@ -60,13 +61,14 @@ const Menubar = () => {
             >
               Restart
             </button>
-            <button
+            {/* Shut down is not possible due to security reasons in the browser*/}
+            {/* <button
               onClick={() => {
-                window.close();
+                window.open(window.location, "_self").close();
               }}
             >
               Shut Down
-            </button>
+            </button> */}
           </div>
         )}
       </div>

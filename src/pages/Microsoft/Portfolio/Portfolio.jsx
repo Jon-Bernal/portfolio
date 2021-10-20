@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PortfolioPiece from "./PortfolioPiece/PortfolioPiece";
 
-import { portfolioData as pd } from "./portfolioData";
+import { portfolioData as pd } from "../../../data/portfolioData";
 import styles from "./Portfolio.module.scss";
 
 export function Portfolio() {

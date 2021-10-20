@@ -1,0 +1,21 @@
+.thumbnailsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 75vw;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  position: relative;
+}
+.thumbnailText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.thumbnailImg {
+  height: 200px;
+  width: 300px;
+}

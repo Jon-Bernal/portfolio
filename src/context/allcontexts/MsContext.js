@@ -25,6 +25,11 @@ const msReducer = (state, action) => {
         ...state,
         osSubMenu: action.subMenu,
       };
+    case "reset":
+      console.log("osSubMenu :>> ", state.osSubMenu);
+      return {
+        ...initState,
+      };
 
     default:
       break;

@@ -20,10 +20,13 @@ const appleReducer = (state, action) => {
       };
 
     case "open os submenu":
-      console.log("osSubMenu :>> ", state.osSubMenu);
       return {
         ...state,
         osSubMenu: action.subMenu,
+      };
+    case "reset":
+      return {
+        ...initState,
       };
 
     default:

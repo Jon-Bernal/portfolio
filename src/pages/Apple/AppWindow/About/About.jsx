@@ -1,6 +1,6 @@
 import React from "react";
 
-import headshot from "../../../assets/images/Portfolio-headshot-pencil-small.png";
+import headshot from "../../../../assets/images/headshot.png";
 import styles from "./About.module.scss";
 
 const About = () => {

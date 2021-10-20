@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { portfolioData as pd } from "../portfolioData";
+import { portfolioData as pd } from "../../../../data/portfolioData";
 import ReactMarkdown from "react-markdown";
 
 import styles from "./PortfolioPiece.module.scss";

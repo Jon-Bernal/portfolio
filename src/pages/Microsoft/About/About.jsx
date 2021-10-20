@@ -1,4 +1,4 @@
-import jonImage from "../../../assets/images/Portfolio-headshot-pencil-small.png";
+import jonImage from "../../../assets/images/headshot.png";
 import styles from "./About.module.scss";
 
 // import css from "../../assets/images/css3.png";

@@ -121,13 +121,21 @@ const OsMenu = () => {
 
             {msState.osSubMenu === "theme" && (
               <div className={styles.subMenu}>
-                <button className={"msBtn"} onClick={() => setTheme("apple")}>
+                <button
+                  className={"msBtn"}
+                  onClick={() => {
+                    msDispatch({
+                      type: "reset",
+                    });
+                    setTheme("apple");
+                  }}
+                >
                   <AppleLogo className={styles.subMenuLogo} />
                   Apple
                 </button>
                 <button
                   className={"msBtn"}
-                  onClick={() => console.log("show linux theme")}
+                  onClick={() => console.log("Linux theme coming soon!")}
                 >
                   <Tux className={styles.subMenuLogo} />
                   {/* GNU/Linux */}
