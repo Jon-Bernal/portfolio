@@ -6,7 +6,7 @@ import { AppleContext } from "../../../context/allcontexts";
 import styles from "./Dock.module.scss";
 
 const Dock = () => {
-  const { appleDispatch } = useContext(AppleContext);
+  const { appleState, appleDispatch } = useContext(AppleContext);
 
   const [hovered, setHovered] = useState("");
   return (
@@ -24,6 +24,7 @@ const Dock = () => {
                 className={`${styles.dockItem} ${
                   hovered === "portfolio" ? styles.prev : ""
                 }`}
+                data-active={`${appleState.openApp === "portfolio"}`}
               />
             </button>
           </li>
@@ -35,6 +36,7 @@ const Dock = () => {
               }}
               onMouseEnter={() => setHovered("portfolio")}
               onMouseLeave={() => setHovered("")}
+              data-active={`${appleState.openApp === "about"}`}
             >
               <AppleAboutMeIcon className={styles.dockItem} />
             </button>

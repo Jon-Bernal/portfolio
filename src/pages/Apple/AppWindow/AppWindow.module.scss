@@ -1,6 +1,8 @@
+@import "../../../scss/mixins.scss";
+
 .appWindow {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 8px;
   width: max-content;
   position: absolute;
   top: 50%;
@@ -18,7 +20,7 @@
   .header {
     height: 50px;
     width: 100%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid lightgray;
     display: flex;
     align-items: center;
   }
@@ -51,8 +53,9 @@
   }
 
   .appContent {
-    max-height: calc(100vh - var(--osMenuHeight) - (var(--dockHeight) * 1.1));
+    max-height: calc(100vh - var(--osMenuHeight) - (var(--dockHeight) * 1.5));
     max-width: 100%;
     overflow: auto;
+    @include appleScrollbar;
   }
 }

@@ -29,13 +29,28 @@
 .dockItem {
   width: 64px;
   height: 64px;
-  -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, 0.5)));
-  -webkit-transition: all 0.3s;
+  // -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, 0.5)));
   -webkit-transform-origin: 50% 100%;
+  -webkit-transition: all 0.3s;
+  transform-origin: 50% 100%;
+  transition: all 0.3s;
+}
+
+[data-active="true"]::before {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b83b3b;
+  display: inline-block;
 }
 
 .container li:hover .dockItem {
   -webkit-transform: scale(2);
+  transform: scale(2);
   margin: 0 2em;
 }
 
