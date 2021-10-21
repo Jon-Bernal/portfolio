@@ -8,7 +8,7 @@ import { AppleContext } from "../../context/allcontexts";
 import styles from "./Apple.module.scss";
 
 const Apple = () => {
-  const { appleState, appleDispatch } = useContext(AppleContext);
+  const { appleState } = useContext(AppleContext);
 
   const [difference, setDifference] = useState({ x: 0, y: 0 });
   const [canDrag, setCanDrag] = useState(false);
