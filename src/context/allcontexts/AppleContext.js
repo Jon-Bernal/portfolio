@@ -10,6 +10,7 @@ const appleReducer = (state, action) => {
         showOsMenu: false,
         osSubMenu: "",
         openApp: action.name,
+        portfolioItem: null,
       };
 
     case "set os menu":
@@ -23,6 +24,11 @@ const appleReducer = (state, action) => {
       return {
         ...state,
         osSubMenu: action.subMenu,
+      };
+    case "view portfolio item":
+      return {
+        ...state,
+        portfolioItem: action.index,
       };
     case "reset":
       return {
@@ -38,6 +44,7 @@ const initState = {
   openApp: "",
   showOsMenu: false,
   subMenu: "",
+  portfolioItem: null,
 };
 
 export const AppleProvider = (props) => {

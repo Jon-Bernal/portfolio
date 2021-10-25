@@ -26,6 +26,7 @@
   position: relative;
   height: auto;
   width: 100%;
+  cursor: pointer;
 }
 
 .thumbnailImg {
@@ -46,4 +47,48 @@
   color: white;
   background: #32323266;
   padding: 0 20px;
+}
+
+// ========================= Portfolio Piece ========================= //
+.container {
+  padding: 0 40px 40px 40px;
+  // max-width: 1200px;
+}
+
+.images {
+  // max-width: 1200px;
+  width: 100%;
+  height: auto;
+  box-shadow: var(--smallShadow);
+}
+
+.heading {
+  text-align: center;
+}
+
+.meta__div {
+  padding-top: 10px;
+}
+
+.meta__p {
+  margin: 0;
+  padding: 0;
+  span {
+    font-weight: bold;
+  }
+}
+
+.textContainer {
+  // max-width: 600px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  grid-auto-flow: dense;
+  border: 1px solid green;
+  .text {
+    display: block;
+    // max-width: 600px;
+    border: 1px solid red;
+  }
 }
