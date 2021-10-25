@@ -1,6 +1,7 @@
 import { portfolioData as pd } from "../../../../data/portfolioData";
 import { AppleContext } from "../../../../context/allcontexts";
 import { useContext } from "react";
+import Backbutton from "../../../../assets/svg/BackButton";
 
 import styles from "./Portfolio.module.scss";
 
@@ -16,6 +17,12 @@ const Portfolio = () => {
 
     return (
       <div className={styles.container}>
+        <button
+          className={styles.backButton}
+          onClick={() => console.log("back")}
+        >
+          <Backbutton />
+        </button>
         {/* Heading */}
         <h2 className={styles.heading}>{p.name}</h2>
 
@@ -25,20 +32,19 @@ const Portfolio = () => {
         </div>
 
         {/* Meta Data */}
+        <div className={styles.meta__div}>
+          <p className={styles.meta__p}>
+            {/* Date's worked on */}
+            Timeline: {p.Year}
+          </p>
+          <p className={styles.meta__p}>
+            {/* Link to live site */}
+            Link to Site: <a href={p.link}>{p.link}</a>
+          </p>
+        </div>
 
         {/* Description */}
         <div className={styles.textContainer}>
-          <div className={styles.meta__div}>
-            <p className={styles.meta__p}>
-              {/* Date's worked on */}
-              <span>Timeline:</span> {p.Year}
-            </p>
-            <p className={styles.meta__p}>
-              {/* Link to live site */}
-              <span>Link to Site:</span> <a href={p.link}>{p.link}</a>
-            </p>
-          </div>
-
           <div className={styles.text}>
             <h3>Description:</h3>
             <p dangerouslySetInnerHTML={createMarkup(p.description)}></p>
