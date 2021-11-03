@@ -177,13 +177,16 @@ export const portfolioData = [
     name: `Portfolio Site`,
     shortDesc: `The site you're looking at right now!`,
     techUsed: [tech.html, tech.javascript, tech.scss],
-    description: `One of the most fun projects I've had the chance to work on with such potential for growth and change!  I'm really excited to see where this goes.  I plan to keep adding all sorts of fun easter eggs and fun little jokes.  This sit will never be truely finished, but I hope you enjoy what I've created!`,
+    description: `One of the most fun projects I've had the chance to work on with such potential for growth and change!  I'm really excited to see where this goes.  I plan to keep adding all sorts of fun easter eggs and fun little jokes.  This site will never be truely finished, but I hope you enjoy what I've created!`,
     Backend: `This one is super simple.  I've hosted it on netlify and setup a simple CI/CD with github main branch.  In the future when I have a little more spare time, I'll put this up on Digital Ocean and use Caddy to serve it up.`,
     Frontend: `pure react and my blood sweat and cheers.`,
     Infastructure: ``,
     thumbnail: { src: portfolioDesktopImage, alt: `pluaris dashboard` },
     images: [
-      { src: `1`, caption: `` },
+      {
+        src: portfolioDesktopImage,
+        caption: `The microsoft view of this site`,
+      },
       { src: `2`, caption: `` },
       { src: `3`, caption: `` },
     ],
