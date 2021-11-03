@@ -10,7 +10,7 @@ export const OsThemeProvider = (props) => {
     if (localStorage.getItem("theme")) {
       setTheme(localStorage.getItem("theme"));
     } else {
-      setTheme("ms");
+      setTheme("apple");
     }
   }, []);
 
