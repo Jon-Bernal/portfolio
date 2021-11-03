@@ -52,6 +52,9 @@
   -webkit-transform: scale(2);
   transform: scale(2);
   margin: 0 2em;
+  @media (hover: none) and (pointer: coarse) {
+    transform: none;
+  }
 }
 
 .container li:hover + li .dockItem,

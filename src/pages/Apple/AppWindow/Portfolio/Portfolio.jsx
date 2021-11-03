@@ -17,18 +17,24 @@ const Portfolio = () => {
 
     return (
       <div className={styles.container}>
+        {/* Controls and label */}
         <button
           className={styles.backButton}
-          onClick={() => console.log("back")}
+          onClick={() => appleDispatch({ type: "back button" })}
         >
           <Backbutton />
         </button>
+
         {/* Heading */}
         <h2 className={styles.heading}>{p.name}</h2>
 
         {/* Image scroller */}
         <div>
-          <img src={p.images[0].src} className={styles.images} />
+          <img
+            src={p.images[0].src}
+            className={styles.images}
+            alt={p.images[0].alt}
+          />
         </div>
 
         {/* Meta Data */}
@@ -74,6 +80,14 @@ const Portfolio = () => {
 
   return (
     <div className={styles.portfolioSelectionPage}>
+      {/* Controls and label */}
+      <button
+        className={styles.backButton}
+        onClick={() => appleDispatch({ type: "back button" })}
+        disabled={appleState.backStateStack.length > 0 ? false : true}
+      >
+        <Backbutton />
+      </button>
       <h2 className={styles.portfolioSelection__header}>Portfolio</h2>
       <div className={styles.thumbnailsContainer}>
         {pd.map((s, i) => {

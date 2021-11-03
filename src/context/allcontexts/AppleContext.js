@@ -11,6 +11,8 @@ const appleReducer = (state, action) => {
         osSubMenu: "",
         openApp: action.name,
         portfolioItem: null,
+        backStateStack: [],
+        forwardStateStack: [],
       };
 
     case "set os menu":
@@ -29,7 +31,38 @@ const appleReducer = (state, action) => {
       return {
         ...state,
         portfolioItem: action.index,
+        backStateStack: [...state.backStateStack, state],
+        forwardStateStack: [],
       };
+    case "back button":
+      if (state.backStateStack.length > 0) {
+        const newBackState = [...state.backStateStack];
+        newBackState.pop();
+
+        return {
+          ...state.backStateStack[state.backStateStack.length - 1],
+          backStateStack: newBackState,
+          forwardStateStack: [...state.forwardStateStack, state],
+        };
+      } else {
+        return {
+          openApp: "portfolio",
+          showOsMenu: false,
+          subMenu: "",
+          portfolioItem: null,
+          backStateStack: [],
+          forwardStateStack: [],
+        };
+      }
+    case "forward button":
+      if (state.backStateStack.length > 0) {
+        return {
+          ...state.backStateStack[state.backStateStack.length - 1],
+          forwardStateStack: [...state.forwardStateStack, state],
+        };
+      } else {
+        return initState;
+      }
     case "reset":
       return {
         ...initState,
@@ -45,6 +78,8 @@ const initState = {
   showOsMenu: false,
   subMenu: "",
   portfolioItem: null,
+  backStateStack: [],
+  forwardStateStack: [],
 };
 
 export const AppleProvider = (props) => {
