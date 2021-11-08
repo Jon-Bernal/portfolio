@@ -1,7 +1,6 @@
 import { portfolioData as pd } from "../../../../data/portfolioData";
 import { AppleContext } from "../../../../context/allcontexts";
 import { useContext } from "react";
-import Backbutton from "../../../../assets/svg/BackButton";
 
 import styles from "./Portfolio.module.scss";
 
@@ -17,14 +16,6 @@ const Portfolio = () => {
 
     return (
       <div className={styles.container}>
-        {/* Controls and label */}
-        {/* <button
-          className={styles.backButton}
-          onClick={() => appleDispatch({ type: "back button" })}
-        >
-          <Backbutton />
-        </button> */}
-
         {/* Heading */}
         <h2 className={styles.heading}>{p.name}</h2>
 
