@@ -4,6 +4,7 @@ import About from "./About/About";
 import { AppleContext } from "../../../context/allcontexts";
 import Portfolio from "./Portfolio/Portfolio";
 import Backbutton from "../../../assets/svg/BackButton";
+import { portfolioData } from "../../../data/portfolioData";
 
 const AboutWindow = ({ difference, setDifference, canDrag, setCanDrag }) => {
   const { appleState, appleDispatch } = useContext(AppleContext);
@@ -82,7 +83,22 @@ const AboutWindow = ({ difference, setDifference, canDrag, setCanDrag }) => {
           <Backbutton />
         </button>
 
-        <div className={styles.appHeaderText}>{appleState?.openApp}</div>
+        {appleState?.openApp === "portfolio" && (
+          <div
+            className={styles.appHeaderText}
+            onClick={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
+          >
+            <span>https://</span>
+            {appleState?.openApp}
+            <span>
+              .com
+              {appleState?.portfolioItem || appleState?.portfolioItem === 0
+                ? `/${portfolioData[appleState?.portfolioItem].name}`
+                : ""}
+            </span>
+          </div>
+        )}
       </div>
       <div
         className={styles.appContent}

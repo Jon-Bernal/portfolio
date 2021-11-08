@@ -80,14 +80,6 @@ const Portfolio = () => {
 
   return (
     <div className={styles.portfolioSelectionPage}>
-      {/* Controls and label */}
-      {/* <button
-        className={styles.backButton}
-        onClick={() => appleDispatch({ type: "back button" })}
-        disabled={appleState.backStateStack.length > 0 ? false : true}
-      >
-        <Backbutton />
-      </button> */}
       <h2 className={styles.portfolioSelection__header}>Portfolio</h2>
       <div className={styles.thumbnailsContainer}>
         {pd.map((s, i) => {
