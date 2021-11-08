@@ -11,6 +11,7 @@ import ChangeOsIcon from "../../../assets/svg/ChangeOsIcon";
 import LayoutWithText from "../../../assets/svg/LayoutWithText";
 import Githubicon from "../../../assets/svg/GithubIcon";
 import Linkedinicon from "../../../assets/svg/LinkedInIcon";
+import MsReload from "../../../assets/svg/MSReload";
 
 // ----------- Data ----------- //
 import { MsContext, OsThemeContext } from "../../../context/allcontexts";
@@ -144,9 +145,15 @@ const OsMenu = () => {
               </div>
             )}
           </div>
-          {/* <button onClick={() => setTheme(theme === "ms" ? "osx" : "ms")}>
-          Change Theme
-        </button> */}
+          <button
+            onClick={() => {
+              window.location.reload();
+            }}
+            className={"msBtn"}
+          >
+            <MsReload className={styles.appSectionListIcons} />
+            Restart
+          </button>
         </div>
       </div>
 
