@@ -38,13 +38,13 @@
 
 [data-active="true"]::before {
   position: absolute;
-  bottom: 10px;
+  bottom: 3px;
   left: 50%;
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: #b83b3b;
+  background: #323232;
   display: inline-block;
 }
 

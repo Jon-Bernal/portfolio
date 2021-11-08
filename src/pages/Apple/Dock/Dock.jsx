@@ -9,6 +9,12 @@ const Dock = () => {
   const { appleState, appleDispatch } = useContext(AppleContext);
 
   const [hovered, setHovered] = useState("");
+
+  console.log(
+    '${appleState.openApp === "portfolio"} :>> ',
+    appleState.openApp === "portfolio"
+  );
+
   return (
     <div className={styles.container}>
       <div id={styles.dock}>
@@ -19,12 +25,12 @@ const Dock = () => {
               onClick={() => {
                 appleDispatch({ type: "change open app", name: "portfolio" });
               }}
+              data-active={`${appleState.openApp === "portfolio"}`}
             >
               <Bluefoldericon
                 className={`${styles.dockItem} ${
                   hovered === "portfolio" ? styles.prev : ""
                 }`}
-                data-active={`${appleState.openApp === "portfolio"}`}
               />
             </button>
           </li>
@@ -34,7 +40,7 @@ const Dock = () => {
               onClick={() => {
                 appleDispatch({ type: "change open app", name: "about" });
               }}
-              onMouseEnter={() => setHovered("portfolio")}
+              onMouseEnter={() => setHovered("about")}
               onMouseLeave={() => setHovered("")}
               data-active={`${appleState.openApp === "about"}`}
             >
