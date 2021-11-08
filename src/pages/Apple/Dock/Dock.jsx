@@ -10,11 +10,6 @@ const Dock = () => {
 
   const [hovered, setHovered] = useState("");
 
-  console.log(
-    '${appleState.openApp === "portfolio"} :>> ',
-    appleState.openApp === "portfolio"
-  );
-
   return (
     <div className={styles.container}>
       <div id={styles.dock}>

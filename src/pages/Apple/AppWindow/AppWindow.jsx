@@ -3,6 +3,7 @@ import styles from "./AppWindow.module.scss";
 import About from "./About/About";
 import { AppleContext } from "../../../context/allcontexts";
 import Portfolio from "./Portfolio/Portfolio";
+import Backbutton from "../../../assets/svg/BackButton";
 
 const AboutWindow = ({ difference, setDifference, canDrag, setCanDrag }) => {
   const { appleState, appleDispatch } = useContext(AppleContext);
@@ -39,13 +40,49 @@ const AboutWindow = ({ difference, setDifference, canDrag, setCanDrag }) => {
           aria-label="Close"
           onClick={(e) => {
             e.stopPropagation();
+            e.preventDefault();
             appleDispatch({ type: "change open app", app: "" });
+          }}
+          onMouseDown={(e) => {
+            // stop window jump from drag feature bubble up
+            e.stopPropagation();
           }}
         >
           X
         </button>
 
-        {/* <div className={styles.appText}>{appleState?.openApp}</div> */}
+        <button
+          className={styles.backButton}
+          aria-label="Back"
+          onClick={(e) => {
+            e.stopPropagation();
+            appleDispatch({ type: "back button" });
+          }}
+          onMouseDown={(e) => {
+            // stop window jump from drag feature bubble up
+            e.stopPropagation();
+          }}
+          disabled={appleState.backStateStack.length > 0 ? false : true}
+        >
+          <Backbutton />
+        </button>
+        <button
+          className={styles.forwardButton}
+          aria-label="Back"
+          onClick={(e) => {
+            e.stopPropagation();
+            appleDispatch({ type: "forward button" });
+          }}
+          onMouseDown={(e) => {
+            // stop window jump from drag feature bubble up
+            e.stopPropagation();
+          }}
+          disabled={appleState.forwardStateStack.length > 0 ? false : true}
+        >
+          <Backbutton />
+        </button>
+
+        <div className={styles.appHeaderText}>{appleState?.openApp}</div>
       </div>
       <div
         className={styles.appContent}

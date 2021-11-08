@@ -18,12 +18,12 @@ const Portfolio = () => {
     return (
       <div className={styles.container}>
         {/* Controls and label */}
-        <button
+        {/* <button
           className={styles.backButton}
           onClick={() => appleDispatch({ type: "back button" })}
         >
           <Backbutton />
-        </button>
+        </button> */}
 
         {/* Heading */}
         <h2 className={styles.heading}>{p.name}</h2>
@@ -81,13 +81,13 @@ const Portfolio = () => {
   return (
     <div className={styles.portfolioSelectionPage}>
       {/* Controls and label */}
-      <button
+      {/* <button
         className={styles.backButton}
         onClick={() => appleDispatch({ type: "back button" })}
         disabled={appleState.backStateStack.length > 0 ? false : true}
       >
         <Backbutton />
-      </button>
+      </button> */}
       <h2 className={styles.portfolioSelection__header}>Portfolio</h2>
       <div className={styles.thumbnailsContainer}>
         {pd.map((s, i) => {

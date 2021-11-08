@@ -51,18 +51,17 @@ const appleReducer = (state, action) => {
           subMenu: "",
           portfolioItem: null,
           backStateStack: [],
-          forwardStateStack: [],
+          forwardStateStack: [...state.forwardStateState, state],
         };
       }
     case "forward button":
-      if (state.backStateStack.length > 0) {
+      console.log("state.forwardStateStack :>> ", state.forwardStateStack);
+      if (state.forwardStateStack.length > 0) {
         return {
-          ...state.backStateStack[state.backStateStack.length - 1],
-          forwardStateStack: [...state.forwardStateStack, state],
+          ...state.forwardStateStack[state.forwardStateStack.length - 1],
         };
-      } else {
-        return initState;
       }
+      return state;
     case "reset":
       return {
         ...initState,
